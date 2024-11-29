@@ -21,7 +21,7 @@
                                 <th scope="col"></th>
                             </tr>
                         </thead>
-                    </table>      
+                    </table>
                 </div>
             </div>
             <div style="height: 100vh"></div>

@@ -53,13 +53,14 @@
             </a>
 
             <nav id="navmenu" class="navmenu">
+
+
                 <ul>
                     <li><a href="#hero" class="active">Beranda</a></li>
                     <li><a href="#about">Buat Laporan</a></li>
                     <li><a href="#services">Berita</a></li>
                     <li><a href="#portfolio">Sejarah</a></li>
                     <li><a href="#team">Pengurus</a></li>
-
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -711,6 +712,8 @@
     <script src="<?= base_url('assets'); ?>/gaya/imagesloaded/imagesloaded.pkgd.min.js"></script>
     <script src="<?= base_url('assets'); ?>/gaya/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="<?= base_url('assets'); ?>/gaya/swiper/swiper-bundle.min.js"></script>
+
+
 
     <!-- Main JS File -->
     <script src="<?= base_url('assets'); ?>/js/main.js"></script>
