@@ -33,37 +33,36 @@
                     <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
                     <div class="col-lg-7">
                         <div class="p-5">
+                            <?php if ($validation = session()->getFlashdata('validation')): ?>
+                                <div class="alert alert-danger" role="alert">
+                                    <?= is_array($validation) ? implode('<br>', $validation) : $validation->listErrors(); ?>
+                                </div>
+                            <?php endif; ?>
                             <div class="text-center">
                                 <h1 class="h4 text-gray-900 mb-4">Buat Akun!</h1>
                             </div>
-                            <form class="user">
+                            <form action="<?= base_url('register/proses') ?>" method="post" class="user">
+                                <?= csrf_field(); ?>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="Nama Depan">
+                                        <input type="text" name="nama_depan" class="form-control form-control-user" id="exampleFirstName" placeholder="Nama Depan">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Nama Belakang">
+                                        <input type="text" name="nama_belakang" class="form-control form-control-user" id="exampleLastName" placeholder="Nama Belakang">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="Masukkan Email">
+                                    <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Masukkan Email">
                                 </div>
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
+                                        <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="password" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Masukkan ulang Password">
+                                        <input type="password" name="konfirmasi_password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Masukkan ulang Password">
                                     </div>
                                 </div>
-                                <a href="auth" class="btn btn-primary btn-user btn-block">
-                                    Daftar Sekarang
-                                </a>
+                                <button type="submit" class="btn btn-primary btn-user btn-block">Daftar Sekarang</button>
                                 <hr>
                                 <a href="index.html" class="btn btn-google btn-user btn-block">
                                     <i class="fab fa-google fa-fw"></i> Daftar dengan Google

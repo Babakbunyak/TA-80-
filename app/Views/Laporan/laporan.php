@@ -115,23 +115,22 @@
                     <h2>Buat Laporan</h2>
                     <p>Laporkan masalah atau keluhan Anda di sini.</p>
                 </div>
-
                 <!-- Form Laporan -->
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card p-4">
-                            <form>
+                            <form action="<?= base_url('laporan/kirim') ?>" method="post">
                                 <div class="mb-3">
                                     <label for="nama" class="form-label">Nama</label>
-                                    <input type="text" class="form-control" id="nama" placeholder="Masukkan nama Anda" required>
+                                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda" required>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email Anda" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="laporan" class="form-label">Laporan</label>
-                                    <textarea class="form-control" id="laporan" rows="5" placeholder="Tuliskan laporan Anda" required></textarea>
+                                    <textarea class="form-control" id="laporan" name="laporan" rows="5" placeholder="Tuliskan laporan Anda" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-custom w-100">Kirim Laporan</button>
                             </form>
@@ -151,18 +150,18 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card p-4">
-                            <form>
+                            <form action="<?= base_url('aspirasi/kirim') ?>" method="post">
                                 <div class="mb-3">
                                     <label for="namaAspirasi" class="form-label">Nama</label>
-                                    <input type="text" class="form-control" id="namaAspirasi" placeholder="Masukkan nama Anda" required>
+                                    <input type="text" class="form-control" id="namaAspirasi" name="nama" placeholder="Masukkan nama Anda" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="emailAspirasi" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="emailAspirasi" placeholder="Masukkan email Anda" required>
+                                    <input type="email" class="form-control" id="emailAspirasi" name="email" placeholder="Masukkan email Anda" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="aspirasi" class="form-label">Aspirasi</label>
-                                    <textarea class="form-control" id="aspirasi" rows="5" placeholder="Tuliskan aspirasi Anda" required></textarea>
+                                    <textarea class="form-control" id="aspirasi" name="aspirasi" rows="5" placeholder="Tuliskan aspirasi Anda" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-custom w-100">Kirim Aspirasi</button>
                             </form>

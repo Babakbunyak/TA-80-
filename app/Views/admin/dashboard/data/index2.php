@@ -10,38 +10,38 @@
                 <li class="breadcrumb-item"><a href="<?= base_url('dashboard'); ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">data laporan</li>
             </ol>
-
             <div class="card mb-4">
                 <div class="card-body">
                     <table class="table text-center">
                         <thead>
                             <tr>
-                                <th scope="col">no.</th>
-                                <th scope="col">kode nomor</th>
-                                <th scope="col">laporan</th>
-                                <th scope="col">tanggal</th>
-                                <th scope="col">alamat</th>
-                                <th scope="col">no.telp</th>
-                                <th scope="col"></th>
+                                <th scope="col">No.</th>
+                                <th scope="col">Kode Nomor</th>
+                                <th scope="col">Laporan</th>
+                                <th scope="col">Tanggal</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">No. Telp</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
+                        <tbody>
+                            <?php foreach ($laporan as $row) : ?>
+                                <tr>
+                                    <td><?= $row['id']; ?></td>
+                                    <td><?= $row['kode_nomor']; ?></td>
+                                    <td><?= $row['laporan']; ?></td>
+                                    <td><?= $row['tanggal']; ?></td>
+                                    <td><?= $row['alamat']; ?></td>
+                                    <td><?= $row['no_telp']; ?></td>
+                                    <td><a href="<?= base_url('laporan/detail/' . $row['id']); ?>" class="btn btn-sm btn-info">Detail</a></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
                     </table>
                 </div>
-            </div>
-            <div style="height: 100vh"></div>
-            <div class="card mb-4">
-                <div class="card-body">When scrolling, the navigation stays at the top of the page. This is the end of the static navigation demo.</div>
             </div>
         </div>
     </main>
 
 
-
-</div>
-
-</div>
-
-</div>
-</main>
-
-<?= $this->endsection(); ?>
+    <?= $this->endsection(); ?>

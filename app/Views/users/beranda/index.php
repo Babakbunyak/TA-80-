@@ -149,134 +149,64 @@
 
         <!-- Berita Section -->
         <section id="services" class="services section">
-
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Berita</h2>
                 <p>Update Berita Hari Ini :</p>
             </div><!-- End Section Title -->
-
             <div class="container mt-5">
-                <div class="row g-4"> <!-- g-4 untuk jarak antar kolom -->
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Bupati mengajak masyarakat untuk bertani</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="Berita" class="btn btn-custom btn-sm">Baca Berita</a>
+                <div class="row g-4">
+                    <?php foreach ($berita as $b) :
+                    ?>
+                        <div class="col-lg-4">
+                            <div class="card">
+                                <?php if (isset($b['gambar'])) : ?>
+                                    <img src="<?= base_url('uploads/berita/' . $b['gambar']) ?>" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                    <?php else : ?>
+                                        <img src="<?= base_url('uploads/berita/default.jpg') ?>" class="card-img-top" alt="...">
+                                    <?php endif; ?>
+                                    <h5 class="card-title"><?= $b['judul'] ?></h5>
+                                    <?php if (isset($b['isi'])) : ?>
+                                        <p class="card-text"><?= substr($b['isi'], 0, 100) ?>...</p>
+                                    <?php else : ?>
+                                        <p class="card-text">Belum ada deskripsi</p>
+                                    <?php endif; ?>
+                                    <?php if (isset($b['id'])) : ?>
+                                        <a href="<?= base_url('berita/detail/' . $b['id']) ?>" class="btn btn-custom btn-sm">Lihat Detail</a>
+                                    <?php else : ?>
+                                        <a href="#" class="btn btn-custom btn-sm">Lihat Detail</a>
+                                    <?php endif; ?>
+                                    </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/2.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Wisata Sumba masuk destinasi favorit pertama di Indonesia</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="Berita2" class="btn btn-custom btn-sm">Baca Berita</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/3.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Rumah adat Sumba menjadi salah satu rumah budaya yang unik</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="Berita3" class="btn btn-custom btn-sm">Baca Berita</a>
-                            </div>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-
             </div>
-
         </section><!-- /Services Section -->
 
 
 
         <!-- More Services Section -->
         <section id="more-services" class="more-services section">
-
             <!-- Section Title -->
             <div class="container section-title" data-aos="fade-up">
                 <h2>Dokumentasi Kegiatan</h2>
                 <p>Kegiatan Satu Visi Untuk Masyarakat :</p>
             </div><!-- End Section Title -->
-
             <div class="container">
-
                 <div class="row gy-4">
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/a.jpg" class="img-fluid" alt="">
-                            <h3>Ad cupiditate sed est odio</h3>
-                            <p>Eum ad dolor et. Autem aut fugiat debitis voluptatem consequuntur sit. Et veritatis id.</p>
+                    <?php foreach ($dokumentasi as $d) : ?>
+                        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card">
+                                <img src="<?= base_url('uploads/dokumentasi/' . $d['dokumen']) ?>" class="img-fluid" alt="">
+                                <h3><?= $d['judul'] ?></h3>
+                                <a href="<?= base_url('dokumentasi/detail/' . $d['id']) ?>" class="btn btn-custom btn-sm">Lihat Detail</a>
+                            </div>
                         </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/b.jpg" class="img-fluid" alt="">
-                            <h3>Voluptatem voluptatum alias</h3>
-                            <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/c.jpg" class="img-fluid" alt="">
-                            <h3>Fugit cupiditate alias nobis.</h3>
-                            <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/d.jpg" class="img-fluid" alt="">
-                            <h3>Fugit cupiditate alias nobis.</h3>
-                            <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/e.jpg" class="img-fluid" alt="">
-                            <h3>Fugit cupiditate alias nobis.</h3>
-                            <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/f.jpg" class="img-fluid" alt="">
-                            <h3>Fugit cupiditate alias nobis.</h3>
-                            <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/g.jpg" class="img-fluid" alt="">
-                            <h3>Fugit cupiditate alias nobis.</h3>
-                            <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
-                    <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/h.jpg" class="img-fluid" alt="">
-                            <h3>Fugit cupiditate alias nobis.</h3>
-                            <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
-                        </div>
-                    </div><!-- End Card Item -->
-
+                    <?php endforeach; ?>
                 </div>
-
             </div>
-
         </section><!-- /More Services Section -->
 
         <!-- Sejarah Section -->

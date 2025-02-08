@@ -6,26 +6,38 @@
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4 mb-3">Anggota</h1>
-            <button type="button" class="btn btn-success">Tambah</button>
+            <button type="button" class="btn btn-success" onclick="location.href='<?= base_url('anggota/tambah'); ?>'">Tambah</button>
             <div class="card mt-3 mb-3">
                 <div class="card-body">
                     <table class="table text-center">
                         <thead>
                             <tr>
-                                <th scope="col">no.</th>
-                                <th scope="col">nama</th>
-                                <th scope="col">alamat</th>
-                                <th scope="col">jabatan</th>
-                                <th scope="col">email</th>
-                                <th scope="col">no.telp</th>
-                                <th scope="col"></th>
+                                <th scope="col">No.</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Jabatan</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">No. Telp</th>
+                                <th scope="col">Aksi</th>
                             </tr>
                         </thead>
-                    </table>      
+                        <tbody>
+                            <?php foreach ($anggota as $row) : ?>
+                                <tr>
+                                    <td><?= $row['id']; ?></td>
+                                    <td><?= $row['nama']; ?></td>
+                                    <td><?= $row['alamat']; ?></td>
+                                    <td><?= $row['jabatan']; ?></td>
+                                    <td><?= $row['email']; ?></td>
+                                    <td><?= $row['no_telp']; ?></td>
+                                    <td>
+                                        <a href="<?= base_url('anggota/edit/' . $row['id']); ?>" class="btn btn-sm btn-info">Edit</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-            <div style="height: 100vh"></div>
-            <div class="card mb-4">
             </div>
         </div>
     </main>
