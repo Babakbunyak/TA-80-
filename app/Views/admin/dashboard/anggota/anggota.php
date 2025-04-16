@@ -6,7 +6,7 @@
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4 mb-3">Anggota</h1>
-            <button type="button" class="btn btn-success" onclick="location.href='<?= base_url('anggota/tambah'); ?>'">Tambah</button>
+            <button type="button" class="btn btn-success" onclick="location.href='<?= base_url('/anggota/tambah'); ?>'">Tambah</button>
             <div class="card mt-3 mb-3">
                 <div class="card-body">
                     <table class="table text-center">

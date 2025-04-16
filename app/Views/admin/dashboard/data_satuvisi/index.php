@@ -33,7 +33,10 @@
                                     <td><?= $row['tanggal']; ?></td>
                                     <td><?= $row['alamat']; ?></td>
                                     <td><?= $row['no_telp']; ?></td>
-                                    <td><a href="<?= base_url('aspirasi/detail/' . $row['id']); ?>" class="btn btn-sm btn-info">Detail</a></td>
+                                    <td>
+
+                                        <a href="<?= base_url('/aspirasi/detail/' . $row['id']); ?>" class="btn btn-sm btn-info">Detail</a>
+                                    </td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
