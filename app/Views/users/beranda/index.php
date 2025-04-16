@@ -53,13 +53,14 @@
             </a>
 
             <nav id="navmenu" class="navmenu">
+
+
                 <ul>
                     <li><a href="#hero" class="active">Beranda</a></li>
                     <li><a href="#about">Buat Laporan</a></li>
                     <li><a href="#services">Berita</a></li>
                     <li><a href="#portfolio">Sejarah</a></li>
                     <li><a href="#team">Pengurus</a></li>
-
                     <li><a href="#contact">Kontak</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -79,7 +80,7 @@
                     <img src="<?= base_url('assets'); ?>/img/banner/1.jpg" alt="">
                     <div class="carousel-container">
                         <h2>Selamat Datang di Satu Visi</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>kami hadir untuk membantu masyarakat di dalam semangat dan kerja sama untuk memajukan sumba yang lebih baik.</p>
                         <!--<a href="#featured-services" class="btn-get-started">Get Started</a> -->
                     </div>
                 </div><!-- End Carousel Item -->
@@ -88,7 +89,7 @@
                     <img src="<?= base_url('assets'); ?>/img/banner/2.jpg" alt="">
                     <div class="carousel-container">
                         <h2>Masyarakat Sumba Yang Sejahterah</h2>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut.</p>
+                        <p>Tana Waikanena Loku Waikala. Di dalam kebersamaan dan kerja keras, menciptakan kemajuan untuk sumba tengah dan masyarakat sumba tengah.</p>
                         <!--<a href="#featured-services" class="btn-get-started">Get Started</a> -->
                     </div>
                 </div><!-- End Carousel Item -->
@@ -128,7 +129,7 @@
             <!-- Button buat laporan dengan gambar lebih gelap -->
             <div class="container my-5">
                 <div class="custom-container p-4 bg-light rounded position-relative text-center"
-                    style="background-image: url('https://scontent.fcgk3-2.fna.fbcdn.net/v/t39.30808-6/311740556_643096670523891_6351035672099807766_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=aa7b47&_nc_eui2=AeFvgBIPH7Ye0oqPAFyjNt-U1HQ0t5DkH0bUdDS3kOQfRvV2894ZLvP9HiMVg8WQOVXYp8NK4jYQ5d6HIYvoEImx&_nc_ohc=naqQSo8HsZ0Q7kNvgEHL-K_&_nc_zt=23&_nc_ht=scontent.fcgk3-2.fna&oh=00_AYD0uEp06pWHMt4TXBzgNkepsz9h4Hz_7QD9Mp3SdGMhyA&oe=66D36040'); 
+                    style="background-image: url('https://tempatwisataunik.com/wp-content/uploads/2019/11/d060afdd-pantai-ratenggaro.jpg'); 
                 background-size: cover; 
                 background-position: center; 
                 filter: brightness(0.9);"> <!-- Brightness dikurangi untuk membuat gambar lebih gelap -->
@@ -642,8 +643,11 @@
     <script src="<?= base_url('assets'); ?>/gaya/isotope-layout/isotope.pkgd.min.js"></script>
     <script src="<?= base_url('assets'); ?>/gaya/swiper/swiper-bundle.min.js"></script>
 
+
+
     <!-- Main JS File -->
     <script src="<?= base_url('assets'); ?>/js/main.js"></script>
+    <script src=></script>
 
 </body>
 

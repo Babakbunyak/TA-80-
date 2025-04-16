@@ -31,7 +31,7 @@
                                     <td><?= $row['email']; ?></td>
                                     <td><?= $row['no_telp']; ?></td>
                                     <td>
-                                        <a href="<?= base_url('anggota/edit/' . $row['id']); ?>" class="btn btn-sm btn-info">Edit</a>
+                                        <a href="<?= base_url('/anggota/edit/' . $row['id']); ?>" class="btn btn-sm btn-info">Edit</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

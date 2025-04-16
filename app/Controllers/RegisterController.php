@@ -22,7 +22,7 @@ class RegisterController extends BaseController
         $validation->setRules([
             'nama_depan' => 'required|min_length[3]|max_length[20]',
             'nama_belakang' => 'required|min_length[3]|max_length[20]',
-            'email' => 'required|valid_email',
+            'email' => 'required|valid_email|is_unique[pengguna.email]',
             'password' => 'required|min_length[8]',
             'konfirmasi_password' => 'required|matches[password]'
         ]);
@@ -46,6 +46,6 @@ class RegisterController extends BaseController
 
         $model->save($data);
 
-        return redirect()->to('/register')->with('success', 'Registrasi berhasil!');
+        return redirect()->to('/auth')->with('success', 'Registrasi berhasil!');
     }
 }

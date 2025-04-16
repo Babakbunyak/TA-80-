@@ -31,15 +31,15 @@
 
             <div class="col-xl-10 col-lg-12 col-md-9">
 
-                <div class="card o-hidden border-0 shadow-lg my-5">
+                <div class="card o-hidden border-0 shadow-lg my-5 mx-auto col-lg-7">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
-                            <div class="col-lg-6">
+
+                            <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 ,mb-4">Welcome Back!</h1>
+                                        <h1 class="h4 text-gray-900 ,mb-4">Selamat Datang!</h1>
                                     </div>
                                     <?php if (session()->getFlashdata('error')) : ?>
                                         <div class="alert alert-danger" role="alert">
@@ -51,11 +51,11 @@
                                         <div class="form-group">
                                             <input type="email" name="email" class="form-control form-control-user"
                                                 id="email" aria-describedby="emailHelp"
-                                                placeholder="Enter Email Address...">
+                                                placeholder="Masukkan Email...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" name="password" class="form-control form-control-user"
-                                                id="password" placeholder="Password">
+                                                id="password" placeholder="Masukkan Password">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
@@ -69,19 +69,17 @@
                                         </button>
                                         <hr>
                                         <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login with Google
+                                            <i class="fab fa-google fa-fw"></i> Login dengan Google
                                         </a>
-                                        <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                                            <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                                        </a>
+
                                     </form>
 
                                     <hr>
                                     <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Forgot Password?</a>
+                                        <a class="small" href="forgot-password.html">Lupa Password</a>
                                     </div>
                                     <div class="text-center">
-                                        <a class="small" href="register.html">Create an Account!</a>
+                                        <a class="small" href="register.html">Buat Akun!</a>
                                     </div>
                                 </div>
                             </div>
@@ -96,14 +94,14 @@
     </div>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="<?= base_url('asset 2'); ?>gaya/jquery/jquery.min.js"></script>
-    <script src="<?= base_url('asset 2'); ?>gaya/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= base_url('asset 2'); ?>/gaya/jquery/jquery.min.js"></script>
+    <script src="<?= base_url('asset 2'); ?>/gaya/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="<?= base_url('asset 2'); ?>gaya/jquery-easing/jquery.easing.min.js"></script>
+    <script src="<?= base_url('asset 2'); ?>/gaya/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="<?= base_url('asset 2'); ?>js/sb-admin-2.min.js"></script>
+    <script src="<?= base_url('asset 2'); ?>/js/sb-admin-2.min.js"></script>
 
 </body>
 
