@@ -61,6 +61,7 @@ $routes->get('Berita2/berita2(:num)', 'Berita2Controller::detail/$1');
 $routes->get('Berita3', 'Berita3Controller::berita3');
 
 // route laporan
-$routes->get('Laporan', 'LaporanController::laporan');
+$routes->get('laporan', 'LaporanController::laporan');
+$routes->post('laporan/kirim', 'LaporanController::kirimLaporan');
 $routes->post('laporan/kirimLaporan', 'LaporanController::kirimLaporan');
 $routes->post('laporan/kirimAspirasi', 'LaporanController::kirimAspirasi');

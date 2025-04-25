@@ -12,7 +12,7 @@ class AspirasiModel extends Model
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'email', 'aspirasi'];
+    protected $allowedFields    = ['id_aspirasi', 'id_pengguna', 'nama', 'email', 'text_aspirasi'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

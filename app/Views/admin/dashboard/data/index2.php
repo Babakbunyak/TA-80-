@@ -10,6 +10,7 @@
                 <li class="breadcrumb-item"><a href="<?= base_url('dashboard'); ?>">Dashboard</a></li>
                 <li class="breadcrumb-item active">data laporan</li>
             </ol>
+            
             <div class="card mb-4">
                 <div class="card-body">
                     <table class="table text-center">
@@ -33,7 +34,10 @@
                                     <td><?= $row['tanggal']; ?></td>
                                     <td><?= $row['alamat']; ?></td>
                                     <td><?= $row['no_telp']; ?></td>
-                                    <td><a href="<?= base_url('laporan/detail/' . $row['id']); ?>" class="btn btn-sm btn-info">Detail</a></td>
+
+                                    <td>                              
+                                    <a href="<?= base_url('laporan/detail/' . $row['id']); ?>" class="btn btn-sm btn-info">Detail</a></td>
+
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

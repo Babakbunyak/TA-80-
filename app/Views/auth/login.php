@@ -103,8 +103,6 @@
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('asset 2'); ?>/js/sb-admin-2.min.js"></script>
 
-    <script src="<?= base_url('asset 2/js/demo/Chart.min.js') ?>"></script>
-
 </body>
 
 </html>

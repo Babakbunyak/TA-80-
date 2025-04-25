@@ -5,6 +5,7 @@ namespace App\Controllers\Admin;
 use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\SatuvisiModel;
+use App\Models\AspirasiModel;
 
 
 class DataSatuvisiController extends BaseController
@@ -15,16 +16,15 @@ class DataSatuvisiController extends BaseController
             'title' => 'Data Aspirasi',
 
         ];
+        $model = new AspirasiModel();
+        $data['aspirasi'] = $model->findAll();
         return view('admin\dashboard\data_satuvisi\index', $data);
     }
 
-    public function index2()
+    public function detail($id)
     {
-        $data = [
-            'title' => 'Data Laporan',
-            //'data_satuvisi' => $this->SatuvisiModel->findAll()
-
-        ];
-        return view('admin\dashboard\data\index2', $data);
+        $$model = new AspirasiModel();
+        $data['aspirasi'] = $model->find($id);
+        return view('admin\dashboard\data_satuvisi\index', $data);
     }
 }

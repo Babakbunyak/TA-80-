@@ -18,6 +18,9 @@ class LaporanController extends BaseController
 
     public function kirimAspirasi()
     {
+
+        helper(['form', 'url']);
+
         $validation = \Config\Services::validation();
 
         $validation->setRules([
@@ -27,23 +30,24 @@ class LaporanController extends BaseController
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
-            return redirect()->to('/aspirasi-laporan')->withInput()->with('error', 'Validasi aspirasi gagal!');
+            return redirect()->to('/laporan')->withInput()->with('error', 'Validasi aspirasi gagal!');
         }
 
         $aspirasiModel = new AspirasiModel();
         $dataAspirasi = [
-            'nama' => $this->request->getPost('nama_aspirasi'),
-            'email' => $this->request->getPost('email_aspirasi'),
-            'aspirasi' => $this->request->getPost('aspirasi'),
+            'nama_aspirasi' => $this->request->getPost('nama'),
+            'email_asirasi' => $this->request->getPost('email'),
+            'aspirasi' => $this->request->getPost('text_aspirasi'),
         ];
 
         $aspirasiModel->save($dataAspirasi);
 
-        return redirect()->to('/aspirasi-laporan')->with('sukses', 'Aspirasi berhasil dikirim!');
+        return redirect()->to('/laporan')->with('sukses', 'Aspirasi berhasil dikirim!');
     }
 
     public function kirimLaporan()
     {
+        helper(['form', 'url']);
         $validation = \Config\Services::validation();
 
         $validation->setRules([
@@ -53,18 +57,18 @@ class LaporanController extends BaseController
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
-            return redirect()->to('/aspirasi-laporan')->withInput()->with('error', 'Validasi laporan gagal!');
+            return redirect()->to('/laporan')->withInput()->with('error', 'Validasi laporan gagal!');
         }
 
         $laporanModel = new LaporanModel();
         $dataLaporan = [
-            'nama' => $this->request->getPost('nama_laporan'),
-            'email' => $this->request->getPost('email_laporan'),
-            'laporan' => $this->request->getPost('laporan'),
+            'nama_laporan' => $this->request->getPost('nama'),
+            'email_laporan' => $this->request->getPost('email'),
+            'laporan' => $this->request->getPost('text_laporan'),
         ];
 
         $laporanModel->save($dataLaporan);
 
-        return redirect()->to('/aspirasi-laporan')->with('sukses', 'Laporan berhasil dikirim!');
+        return redirect()->to('/laporan')->with('sukses', 'Laporan berhasil dikirim!');
     }
 }

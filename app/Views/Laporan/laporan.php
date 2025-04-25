@@ -119,14 +119,14 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card p-4">
-                            <form action="<?= base_url('laporan/kirim') ?>" method="post">
+                            <form action="<?= base_url('laporan/kirimLaporan') ?>" method="post">
                                 <div class="mb-3">
-                                    <label for="nama" class="form-label">Nama</label>
-                                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                                    <label for="nama_laporan" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="nama_laporan" name="nama" placeholder="Masukkan nama Anda" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan email Anda" required>
+                                    <label for="email_laporan" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email_laporan" name="email" placeholder="Masukkan email Anda" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="laporan" class="form-label">Laporan</label>
@@ -150,14 +150,14 @@
                 <div class="row justify-content-center">
                     <div class="col-md-8">
                         <div class="card p-4">
-                            <form action="<?= base_url('aspirasi/kirim') ?>" method="post">
+                            <form action="<?= base_url('laporan/kirimAspirasi') ?>" method="post">
                                 <div class="mb-3">
-                                    <label for="namaAspirasi" class="form-label">Nama</label>
-                                    <input type="text" class="form-control" id="namaAspirasi" name="nama" placeholder="Masukkan nama Anda" required>
+                                    <label for="nama_aspirasi" class="form-label">Nama</label>
+                                    <input type="text" class="form-control" id="nama_aspirasi" name="nama" placeholder="Masukkan nama Anda" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="emailAspirasi" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="emailAspirasi" name="email" placeholder="Masukkan email Anda" required>
+                                    <label for="email_aspirasi" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email_aspirasi" name="email" placeholder="Masukkan email Anda" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="aspirasi" class="form-label">Aspirasi</label>
