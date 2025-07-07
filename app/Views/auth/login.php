@@ -19,10 +19,35 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('asset 2'); ?>/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/register-custom.css'); ?>" rel="stylesheet">
 
 </head>
 
-<body class="bg-gradient-primary">
+<body class="bg-gradient-primary" style="background: #21d1f8 !important;">
+
+    <!-- Animated bubbles background -->
+    <div class="bubbles">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+        <span style="--i:4"></span>
+        <span style="--i:5"></span>
+        <span style="--i:6"></span>
+        <span style="--i:7"></span>
+        <span style="--i:8"></span>
+        <span style="--i:9"></span>
+        <span style="--i:10"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:13"></span>
+        <span style="--i:14"></span>
+        <span style="--i:15"></span>
+        <span style="--i:16"></span>
+        <span style="--i:17"></span>
+        <span style="--i:18"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+    </div>
 
     <div class="container">
 
@@ -67,20 +92,13 @@
                                         <button type="submit" class="btn btn-primary btn-user btn-block">
                                             Login
                                         </button>
-                                        <hr>
-                                        <a href="index.html" class="btn btn-google btn-user btn-block">
-                                            <i class="fab fa-google fa-fw"></i> Login dengan Google
-                                        </a>
 
-                                    </form>
-
-                                    <hr>
-                                    <div class="text-center">
-                                        <a class="small" href="forgot-password.html">Lupa Password</a>
-                                    </div>
-                                    <div class="text-center">
-                                        <a class="small" href="register.html">Buat Akun!</a>
-                                    </div>
+                                        <div class="text-center">
+                                            <a class="small" href="forgot-password.html">Lupa Password</a>
+                                        </div>
+                                        <div class="text-center">
+                                            <a class="small" href="register">Buat Akun!</a>
+                                        </div>
                                 </div>
                             </div>
                         </div>

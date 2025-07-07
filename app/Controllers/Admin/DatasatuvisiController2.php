@@ -25,4 +25,15 @@ class DataSatuvisiController2 extends BaseController
         $data['laporan'] = $model->find($id);
         return view('laporan/detail', $data);
     }
+    public function hapus($id_laporan)
+    {
+        $model = new LaporanModel();
+        $laporan = $model->find($id_laporan);
+        if ($laporan) {
+            $model->delete($id_laporan);
+            return redirect()->to(base_url('admin/dashboard/data/index2'))->with('sukses', 'Laporan berhasil dihapus!');
+        } else {
+            return redirect()->back()->with('error', 'Data laporan tidak ditemukan!');
+        }
+    }
 }

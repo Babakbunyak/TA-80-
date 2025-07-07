@@ -8,7 +8,7 @@ class BeritaModel extends Model
 {
     public function getBeritaTerbaru($limit)
     {
-        return $this->orderBy('created_at', 'DESC')->limit($limit)->findAll();
+        return $this->orderBy('tanggal', 'deskripsi')->limit($limit)->findAll();
     }
 
     public function getAllBerita()
@@ -16,13 +16,20 @@ class BeritaModel extends Model
         return $this->findAll();
     }
 
-    protected $table            = 'upload_berita';
-    protected $primaryKey       = 'id';
+    protected $table            = 'berita';
+    protected $primaryKey       = 'id_berita';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_berita', 'judul', 'isi', 'gambar', 'created_at', 'updated_at'];
+    protected $allowedFields = [
+        'id_berita',
+        'id_anggota',
+        'judul',
+        'image',
+        'deskripsi',
+        'tanggal'
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

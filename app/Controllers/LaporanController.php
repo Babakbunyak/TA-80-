@@ -3,9 +3,6 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
-use CodeIgniter\Controller;
-use Psr\Log\LoggerInterface;
 use App\Models\LaporanModel;
 use App\Models\AspirasiModel;
 
@@ -13,34 +10,43 @@ class LaporanController extends BaseController
 {
     public function laporan()
     {
-        return view('Laporan/laporan');
+        return view('Laporan/laporan'); // pastikan file view ini ada di /app/Views/Laporan/laporan.php
     }
 
     public function kirimAspirasi()
     {
-
         helper(['form', 'url']);
-
         $validation = \Config\Services::validation();
 
         $validation->setRules([
-            'nama_aspirasi' => 'required',
-            'email_aspirasi' => 'required|valid_email',
-            'aspirasi' => 'required',
+            'nama' => 'required',
+            'email' => 'required|valid_email',
+            'teks_aspirasi' => 'required',
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
             return redirect()->to('/laporan')->withInput()->with('error', 'Validasi aspirasi gagal!');
         }
 
-        $aspirasiModel = new AspirasiModel();
+        $laporanModel = new LaporanModel();
+        $id_pengguna = session()->get('id_pengguna') ?? null;
+
         $dataAspirasi = [
-            'nama_aspirasi' => $this->request->getPost('nama'),
-            'email_asirasi' => $this->request->getPost('email'),
-            'aspirasi' => $this->request->getPost('text_aspirasi'),
+            'id_pengguna'   => $id_pengguna,
+            'jenis'         => 'aspirasi',
+            'judul'         => null,
+            'lok_kejadian'  => null,
+            'objek'         => null,
+            'text_laporan'  => $this->request->getPost('teks_aspirasi'),
+            'harapan'       => null,
+            'tanggal_dibuat' => date('Y-m-d H:i:s'),
+            'nama_pelapor'  => $this->request->getPost('nama'),
+            'email'         => $this->request->getPost('email'),
+            'status'        => 'baru',
+            'created_at'    => date('Y-m-d H:i:s'),
         ];
 
-        $aspirasiModel->save($dataAspirasi);
+        $laporanModel->save($dataAspirasi);
 
         return redirect()->to('/laporan')->with('sukses', 'Aspirasi berhasil dikirim!');
     }
@@ -51,9 +57,11 @@ class LaporanController extends BaseController
         $validation = \Config\Services::validation();
 
         $validation->setRules([
-            'nama_laporan' => 'required',
-            'email_laporan' => 'required|valid_email',
-            'laporan' => 'required',
+            'judul' => 'required',
+            'lok_kejadian' => 'required',
+            'objek' => 'required',
+            'text_laporan' => 'required',
+            'tanggal_dibuat' => 'required',
         ]);
 
         if (!$validation->withRequest($this->request)->run()) {
@@ -61,10 +69,20 @@ class LaporanController extends BaseController
         }
 
         $laporanModel = new LaporanModel();
+
+        // Cek apakah user login
+        $id_pengguna = session()->get('id_pengguna') ?? null;
+
         $dataLaporan = [
-            'nama_laporan' => $this->request->getPost('nama'),
-            'email_laporan' => $this->request->getPost('email'),
-            'laporan' => $this->request->getPost('text_laporan'),
+            'id_pengguna'   => $id_pengguna,
+            'jenis'         => $this->request->getPost('jenis'), // misalnya 'laporan' atau 'aspirasi'
+            'judul'         => $this->request->getPost('judul'),
+            'lok_kejadian'  => $this->request->getPost('lok_kejadian'),
+            'objek'        => $this->request->getPost('objek'),
+            'text_laporan'  => $this->request->getPost('text_laporan'),
+            'harapan'       => $this->request->getPost('harapan'),
+            'tanggal_dibuat' => $this->request->getPost('tanggal_dibuat'),
+            'nama_pelapor'  => $this->request->getPost('nama_pelapor') ?: session()->get('nama') // ambil nama dari session jika tidak diisi
         ];
 
         $laporanModel->save($dataLaporan);

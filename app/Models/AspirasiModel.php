@@ -7,12 +7,20 @@ use CodeIgniter\Model;
 class AspirasiModel extends Model
 {
     protected $table            = 'aspirasi';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_aspirasi';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_aspirasi', 'id_pengguna', 'nama', 'email', 'text_aspirasi'];
+    protected $allowedFields    = [
+        'id_aspirasi',
+        'judul',
+        'isi',
+        'foto',
+        'created_at',
+        'updated_at',
+        'id_pengguna'
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -27,6 +27,7 @@
 
     <!-- Main CSS File -->
     <link href="<?= base_url('assets'); ?>/css/main.css" rel="stylesheet">
+    <link href="<?= base_url('assets'); ?>/css/dokumentasi.css" rel="stylesheet">
 
     <!-- =======================================================
   * Template Name: Shuffle
@@ -157,27 +158,22 @@
             </div><!-- End Section Title -->
             <div class="container mt-5">
                 <div class="row g-4">
-                    <?php foreach ($berita as $b) :
-                    ?>
+                    <?php foreach ($berita as $b) : ?>
                         <div class="col-lg-4">
                             <div class="card">
-                                <?php if (isset($b['gambar'])) : ?>
-                                    <img src="<?= base_url('uploads/berita/' . $b['gambar']) ?>" class="card-img-top" alt="...">
+                                <?php if (isset($b['image'])) : ?>
+                                    <img src="<?= base_url('uploads/berita/' . $b['image']) ?>" class="card-img-top" alt="...">
                                     <div class="card-body">
                                     <?php else : ?>
                                         <img src="<?= base_url('uploads/berita/default.jpg') ?>" class="card-img-top" alt="...">
                                     <?php endif; ?>
                                     <h5 class="card-title"><?= $b['judul'] ?></h5>
-                                    <?php if (isset($b['isi'])) : ?>
-                                        <p class="card-text"><?= substr($b['isi'], 0, 100) ?>...</p>
+                                    <?php if (isset($b['deskripsi'])) : ?>
+                                        <p class="card-text"><?= substr($b['deskripsi'], 0, 100) ?>...</p>
                                     <?php else : ?>
                                         <p class="card-text">Belum ada deskripsi</p>
                                     <?php endif; ?>
-                                    <?php if (isset($b['id'])) : ?>
-                                        <a href="<?= base_url('berita/detail/' . $b['id']) ?>" class="btn btn-custom btn-sm">Lihat Detail</a>
-                                    <?php else : ?>
-                                        <a href="#" class="btn btn-custom btn-sm">Lihat Detail</a>
-                                    <?php endif; ?>
+                                    <a href="<?= base_url('berita/detail/' . ($b['id'] ?? $b['id_berita'] ?? '')) ?>" class="btn btn-custom btn-sm">Lihat Detail</a>
                                     </div>
                             </div>
                         </div>
@@ -195,20 +191,32 @@
                 <h2>Dokumentasi Kegiatan</h2>
                 <p>Kegiatan Satu Visi Untuk Masyarakat :</p>
             </div><!-- End Section Title -->
+
             <div class="container">
                 <div class="row gy-4">
                     <?php foreach ($dokumentasi as $d) : ?>
                         <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card">
-                                <img src="<?= base_url('uploads/dokumentasi/' . $d['dokumen']) ?>" class="img-fluid" alt="">
-                                <h3><?= $d['judul'] ?></h3>
-                                <a href="<?= base_url('dokumentasi/detail/' . $d['id']) ?>" class="btn btn-custom btn-sm">Lihat Detail</a>
+                            <div class="card h-100 d-flex flex-column align-items-center justify-content-between">
+                                <?php
+                                $fotoPath = FCPATH . 'uploads/dokumentasi/' . $d['image'];
+                                $fotoURL = base_url('uploads/dokumentasi/' . $d['image']);
+                                ?>
+                                <?php if (!empty($d['image']) && file_exists($fotoPath)) : ?>
+                                    <img src="<?= $fotoURL ?>" class="img-fixed-doc" alt="<?= esc($d['judul']) ?>">
+                                <?php else : ?>
+                                    <img src="<?= base_url('assets/img/default-image.jpg') ?>" class="img-fixed-doc" alt="Gambar tidak tersedia">
+                                <?php endif; ?>
+                                <div class="card-body w-100 p-2">
+                                    <h3 class="mt-2 mb-2"><?= esc($d['judul']) ?></h3>
+                                    <a href="<?= base_url('dokumentasi/detail/' . $d['id_dokumentasi']) ?>" class="btn btn-custom btn-sm mt-2">Lihat Detail</a>
+                                </div>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
         </section><!-- /More Services Section -->
+
 
         <!-- Sejarah Section -->
         <section id="portfolio" class="portfolio section">
@@ -312,17 +320,12 @@
 
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                         <div class="member">
-                            <img src="<?= base_url('assets'); ?>/img/a1.jpg" class="img-fluid" alt="">
+                            <img src="<?= base_url('assets'); ?>/img/MAMA.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Rambu Yana</h4>
-                                    <span>Chief Executive Officer</span>
-                                    <div class="social">
-                                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                    </div>
+                                    <h4>DEBORA RAMBU KASUATU</h4>
+                                    <span>Direktur Satu Visi</span>
+
                                 </div>
                             </div>
                         </div>
@@ -330,17 +333,12 @@
 
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                         <div class="member">
-                            <img src="<?= base_url('assets'); ?>/img/b2.jpg" class="img-fluid" alt="">
+                            <img src="<?= base_url('assets'); ?>/img/MAMA DEA.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Sarah Jhonson</h4>
-                                    <span>Product Manager</span>
-                                    <div class="social">
-                                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                    </div>
+                                    <h4>Yublina Maru
+                                    </h4>
+                                    <span>Manager Program</span>
                                 </div>
                             </div>
                         </div>
@@ -348,17 +346,11 @@
 
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                         <div class="member">
-                            <img src="<?= base_url('assets'); ?>/img/c3.jpg" class="img-fluid" alt="">
+                            <img src="<?= base_url('assets'); ?>/img/KA AMBU.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>William Anderson</h4>
-                                    <span>CTO</span>
-                                    <div class="social">
-                                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                    </div>
+                                    <h4> Lestari Rambu Boba </h4>
+                                    <span>Devisi Pendidikan dan Kelembagaan</span>
                                 </div>
                             </div>
                         </div>
@@ -366,25 +358,70 @@
 
                     <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
                         <div class="member">
-                            <img src="<?= base_url('assets'); ?>/img/team/team-4.jpg" class="img-fluid" alt="">
+                            <img src="<?= base_url('assets'); ?>/img/RAMBU YANA.jpg" class="img-fluid" alt="">
                             <div class="member-info">
                                 <div class="member-info-content">
-                                    <h4>Amanda Jepson</h4>
-                                    <span>Accountant</span>
-                                    <div class="social">
-                                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                    </div>
+                                    <h4>Rambu Yana </h4>
+                                    <span>manager keuangan</span>
                                 </div>
                             </div>
                         </div>
                     </div><!-- End Team Member -->
 
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member">
+                            <img src="<?= base_url('assets'); ?>/img/MAMA CLARA.jpg" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Marice Suruk</h4>
+                                    <span>Sekretaris</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member">
+                            <img src="<?= base_url('assets'); ?>/img/KEVIN.jpg" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Chaviendi U.Nusa Mesa</h4>
+                                    <span>Anggota DP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member">
+                            <img src="<?= base_url('assets'); ?>/img/KA CINDY.jpg" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Cindi Yohana </h4>
+                                    <span>devisi politik, hukum dan advokasi</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+                    <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="member">
+                            <img src="<?= base_url('assets'); ?>/img/KA VERNI.jpg" class="img-fluid" alt="">
+                            <div class="member-info">
+                                <div class="member-info-content">
+                                    <h4>Farniati T. Winu</h4>
+                                    <span>Anggota DP</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- End Team Member -->
+
+
                 </div>
 
             </div>
+
+
 
         </section><!-- /Team Section -->
 
@@ -408,9 +445,9 @@
 
                         <div class="faq-container">
                             <div class="faq-item faq-active">
-                                <h3><span class="num">1.</span> <span>Non consectetur a erat nam at lectus urna duis?</span></h3>
+                                <h3><span class="num"></span> <span>Motivasi Untukmu</span></h3>
                                 <div class="faq-content">
-                                    <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
+                                    <p>Jangan menyerah, karena setiap kesulitan</p>
                                 </div>
                                 <i class="faq-toggle bi bi-chevron-right"></i>
                             </div><!-- End Faq item-->
@@ -427,20 +464,14 @@
             <div class="container mt-5">
                 <div class="row">
                     <!-- Visi Section -->
-                    <div class="col-md-6">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
+                    <div class="col-md-6 d-flex align-items-stretch mb-3">
+                        <div class="card shadow-sm w-100">
+                            <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-center">Visi</h3>
-                                <p class="card-text text-justify">
+                                <p class="card-text text-center">
                                     Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
-                                </p>
-                                <p class="card-text text-justify">
                                     Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
-                                </p>
-                                <p class="card-text text-justify">
                                     Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
-                                </p>
-                                <p class="card-text text-justify">
                                     Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
                                 </p>
                             </div>
@@ -448,11 +479,11 @@
                     </div>
 
                     <!-- Misi Section -->
-                    <div class="col-md-6">
-                        <div class="card shadow-sm">
-                            <div class="card-body">
+                    <div class="col-md-6 d-flex align-items-stretch mb-3">
+                        <div class="card shadow-sm w-100">
+                            <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-center">Misi</h3>
-                                <ul class="list-group list-group-flush">
+                                <ul class="list-group list-group-flush flex-grow-1">
                                     <li class="list-group-item">Mengembangkan produk teknologi berkualitas tinggi yang ramah lingkungan dan inovatif.</li>
                                     <li class="list-group-item">Memberikan layanan pelanggan terbaik yang berfokus pada kepuasan dan kebutuhan pengguna.</li>
                                     <li class="list-group-item">Membangun kerjasama yang kuat dengan berbagai pihak untuk menciptakan ekosistem bisnis yang berkelanjutan.</li>
@@ -465,101 +496,65 @@
             </div>
 
 
+
         </section><!-- /Faq Section -->
 
         <!-- Contact Section -->
         <section id="contact" class="contact section">
 
             <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
+            <div class="container section-title text-center" data-aos="fade-up">
                 <h2>Kontak</h2>
                 <p>Silahkan hubungi kami</p>
             </div><!-- End Section Title -->
 
             <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <div class="row justify-content-center gy-4"> <!-- Center the row -->
 
-                <div class="row gy-4">
+                    <div class="col-lg-8"> <!-- Max lebar di 8 kolom, agar tidak terlalu lebar -->
+                        <div class="row gy-4 text-center"> <!-- Center text -->
 
-                    <div class="col-lg-6">
-
-                        <div class="row gy-4">
                             <div class="col-md-6">
                                 <div class="info-item" data-aos="fade" data-aos-delay="200">
                                     <i class="bi bi-geo-alt"></i>
                                     <h3>Alamat</h3>
-                                    <p>A108 Adam Street</p>
-                                    <p>New York, NY 535022</p>
+                                    <p>Desa Wairasa- Retetlement, Kec. Umbu Ratu Nggay Barat, Kab. Sumba Tengah, Provinsi Nusa Tenggara Timur</p>
                                 </div>
-                            </div><!-- End Info Item -->
+                            </div>
 
                             <div class="col-md-6">
                                 <div class="info-item" data-aos="fade" data-aos-delay="300">
                                     <i class="bi bi-telephone"></i>
                                     <h3>Hubungi Kami</h3>
-                                    <p>+1 5589 55488 55</p>
-                                    <p>+1 6678 254445 41</p>
+                                    <p>082146527966</p>
                                 </div>
-                            </div><!-- End Info Item -->
+                            </div>
 
                             <div class="col-md-6">
                                 <div class="info-item" data-aos="fade" data-aos-delay="400">
                                     <i class="bi bi-envelope"></i>
-                                    <h3>Email Kami</h3>
-                                    <p>info@example.com</p>
-                                    <p>contact@example.com</p>
+                                    <h3>Email</h3>
+                                    <p>satuvisisumba@gmail.com</p>
                                 </div>
-                            </div><!-- End Info Item -->
+                            </div>
 
                             <div class="col-md-6">
                                 <div class="info-item" data-aos="fade" data-aos-delay="500">
                                     <i class="bi bi-clock"></i>
-                                    <h3>Jam Kerja</h3>
-                                    <p>Monday - Friday</p>
-                                    <p>9:00AM - 05:00PM</p>
+                                    <h3>Hari dan Jam Kerja</h3>
+                                    <p>Senin - Sabtu</p>
+                                    <p>08.00 - 17.00 WIT</p>
                                 </div>
-                            </div><!-- End Info Item -->
+                            </div>
 
                         </div>
+                    </div><!-- End .col-lg-8 -->
 
-                    </div>
-
-                    <div class="col-lg-6">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
-                            <div class="row gy-4">
-
-                                <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Masukkan Nama" required="">
-                                </div>
-
-                                <div class="col-md-6 ">
-                                    <input type="email" class="form-control" name="email" placeholder="Masukkan Email" required="">
-                                </div>
-
-                                <div class="col-12">
-                                    <input type="text" class="form-control" name="subject" placeholder="Judul" required="">
-                                </div>
-
-                                <div class="col-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Pesan" required=""></textarea>
-                                </div>
-
-                                <div class="col-12 text-center">
-                                    <div class="loading">Loading</div>
-                                    <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                    <button type="submit">Kirim Pesan</button>
-                                </div>
-
-                            </div>
-                        </form>
-                    </div><!-- End Contact Form -->
-
-                </div>
-
-            </div>
+                </div><!-- End .row -->
+            </div><!-- End Container -->
 
         </section><!-- /Contact Section -->
+
 
     </main>
 
@@ -573,10 +568,13 @@
                     </a>
                     <p>Cras fermentum odio eu feugiat lide par naso tierra. Justo eget nada terra videa magna derita valies darta donna mare fermentum iaculis eu non diam phasellus.</p>
                     <div class="social-links d-flex mt-4">
-                        <a href=""><i class="bi bi-twitter-x"></i></a>
-                        <a href=""><i class="bi bi-facebook"></i></a>
-                        <a href=""><i class="bi bi-instagram"></i></a>
-                        <a href=""><i class="bi bi-linkedin"></i></a>
+
+                        <a href="https://www.facebook.com/groups/1122613994496942/?ref=share&mibextid=KtfwRi" target="_blank" rel="noopener noreferrer">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+
+
                     </div>
                 </div>
 

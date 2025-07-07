@@ -19,11 +19,34 @@
 
     <!-- Custom styles for this template-->
     <link href="<?= base_url('asset 2'); ?>/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('assets/css/register-custom.css'); ?>" rel="stylesheet">
 
 </head>
 
-<body class="bg-gradient-primary">
-
+<body class="bg-gradient-primary" style="background: #21d1f8 !important;">
+    <!-- Animated bubbles background -->
+    <div class="bubbles">
+        <span style="--i:1"></span>
+        <span style="--i:2"></span>
+        <span style="--i:3"></span>
+        <span style="--i:4"></span>
+        <span style="--i:5"></span>
+        <span style="--i:6"></span>
+        <span style="--i:7"></span>
+        <span style="--i:8"></span>
+        <span style="--i:9"></span>
+        <span style="--i:10"></span>
+        <span style="--i:11"></span>
+        <span style="--i:12"></span>
+        <span style="--i:13"></span>
+        <span style="--i:14"></span>
+        <span style="--i:15"></span>
+        <span style="--i:16"></span>
+        <span style="--i:17"></span>
+        <span style="--i:18"></span>
+        <span style="--i:19"></span>
+        <span style="--i:20"></span>
+    </div>
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5 mx-auto col-lg-7">
@@ -43,13 +66,23 @@
                             </div>
                             <form action="<?= base_url('register/proses') ?>" method="post" class="user">
                                 <?= csrf_field(); ?>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" name="nama_depan" class="form-control form-control-user" id="exampleFirstName" placeholder="Nama Depan">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="text" name="nama_belakang" class="form-control form-control-user" id="exampleLastName" placeholder="Nama Belakang">
-                                    </div>
+                                <div class="form-group">
+                                    <input type="text" name="nama" class="form-control form-control-user" id="nama" placeholder="Masukan nama">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="tempat_lahir" class="form-control form-control-user" id="tempatlahir" placeholder="tempat lahir">
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" name="tanggal_lahir" class="form-control form-control-user" id="tanggallahir" placeholder="">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="no_ktp" class="form-control form-control-user" id="noktp" placeholder="masukan nomor ktp" pattern="[0-9]{16}" maxlength="16">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" name="alamat" class="form-control form-control-user" id="alamat" placeholder="masukan alamat tempat tinggal">
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" name="no_telp" class="form-control form-control-user" id="notelp" placeholder="masukan nomor telp" pattern="[0-9]{12}" maxlength="15">
                                 </div>
                                 <div class="form-group">
                                     <input type="email" name="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Masukkan Email">
@@ -64,9 +97,7 @@
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-user btn-block">Daftar Sekarang</button>
                                 <hr>
-                                <a href="index.html" class="btn btn-google btn-user btn-block">
-                                    <i class="fab fa-google fa-fw"></i> Daftar dengan Google
-                                </a>
+
 
                             </form>
                             <hr>

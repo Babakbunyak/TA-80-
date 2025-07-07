@@ -1,0 +1,116 @@
+.btn-primary.btn-user {
+    background: #21d1f8 !important;
+    border-color: #21d1f8 !important;
+    color: #fff !important;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+.btn-primary.btn-user:hover, .btn-primary.btn-user:focus {
+    background: #1bb1d6 !important;
+    border-color: #1bb1d6 !important;
+    color: #fff !important;
+}
+body.bg-gradient-primary {
+    background: #21d1f8 !important;
+}
+
+/* Animated gradient background for register page */
+.animated-gradient-bg {
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #21d1f8, #6dd5ed, #2193b0, #b2fefa);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease-in-out infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Optional: add a subtle overlay for depth */
+.animated-gradient-bg::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(255,255,255,0.05);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Ensure card is above the background overlay */
+.animated-gradient-bg .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Animated bubbles background for register page */
+.bubbles {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+.bubbles span {
+    position: absolute;
+    display: block;
+    bottom: -120px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #fff 60%, #21d1f8 100%);
+    border-radius: 50%;
+    animation: bubbleUp 12s linear infinite;
+    left: calc(5vw * var(--i));
+    animation-duration: calc(7s + var(--i) * 0.7s);
+    filter: drop-shadow(0 0 12px #21d1f8) brightness(1.2);
+    opacity: 0.95;
+    box-shadow: 0 4px 24px 0 #21d1f8, 0 0 0 4px #fff2, 0 0 16px 4px #6dd5ed99;
+    border: 2px solid #6dd5ed;
+    transition: background 0.3s;
+}
+.bubbles span:nth-child(3n) {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #21d1f8 60%, #fff 100%);
+    filter: drop-shadow(0 0 18px #6dd5ed) brightness(1.3);
+    opacity: 0.85;
+    border: 2px solid #2193b0;
+}
+.bubbles span:nth-child(4n) {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #b2fefa 60%, #21d1f8 100%);
+    filter: drop-shadow(0 0 8px #b2fefa) brightness(1.4);
+    opacity: 1;
+    border: 2px solid #fff;
+}
+@keyframes bubbleUp {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    80% {
+        opacity: 0.7;
+    }
+    100% {
+        transform: translateY(-110vh) scale(1.3);
+        opacity: 0;
+    }
+}
+
+/* Ensure form container is above bubbles */
+body .container, body .card {
+    position: relative;
+    z-index: 2;
+}

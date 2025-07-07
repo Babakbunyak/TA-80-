@@ -1700,6 +1700,15 @@ body {
   object-fit: cover;
 }
 
+.member img {
+  width: 100%;
+  height: 400px; /* atur tinggi sesuai kebutuhan */
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px; /* opsional, untuk tampilan rapi */
+}
+
+
 
 
 

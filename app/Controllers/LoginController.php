@@ -2,17 +2,12 @@
 
 namespace App\Controllers;
 
-use CodeIgniter\Session\Session;
-
 use App\Controllers\BaseController;
-use CodeIgniter\HTTP\ResponseInterface;
-
 use App\Models\PenggunaModel;
 use App\Models\AnggotaModel;
 
 class LoginController extends BaseController
 {
-
     public function login()
     {
         return view('auth/login');
@@ -21,14 +16,15 @@ class LoginController extends BaseController
     public function authenticate()
     {
         helper(['form', 'url']);
-
         $session = session();
+
         $penggunaModel = new PenggunaModel();
         $anggotaModel = new AnggotaModel();
 
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
+        // Validasi form login
         if (!$this->validate([
             'email' => 'required|valid_email',
             'password' => 'required|min_length[8]'
@@ -36,51 +32,52 @@ class LoginController extends BaseController
             return redirect()->back()->withInput()->with('validation', $this->validator);
         }
 
+        // Cek di tabel pengguna
         $data = $penggunaModel->where('email', $email)->first();
 
         if ($data) {
             $pass = $data['password'];
-            $verify_pass = password_verify($password, $pass);
-
-            if ($verify_pass) {
+            if (password_verify($password, $pass)) {
+                // Simpan semua info penting ke session
                 $session->set([
-                    'logged_in' => TRUE,
-                    'email' => $email,
-                    'role' => 'pengguna'
+                    'id_pengguna'   => $data['id_pengguna'],
+                    'nama'    => $data['nama'],
+                    'email'         => $data['email'],
+                    'role'          => 'pengguna',
+                    'logged_in'     => true
                 ]);
 
                 return redirect()->to('/laporan/laporan');
             } else {
-                return redirect()->back()->with('error', 'email atau password salah!');
-            }
-        } else {
-            $data = $anggotaModel->where('email', $email)->first();
-
-            if ($data) {
-                $pass = $data['password'];
-                $verify_pass = password_verify($password, $pass);
-
-                if ($verify_pass) {
-                    $session->set([
-                        'logged_in' => TRUE,
-                        'email' => $email,
-                        'role' => 'anggota'
-                    ]);
-
-                    return redirect()->to('/dashboard');
-                } else {
-                    return redirect()->back()->with('error', 'email atau password salah!');
-                }
-            } else {
-                return redirect()->back()->with('error', 'email atau password salah!');
+                return redirect()->back()->with('error', 'Email atau password salah!');
             }
         }
+
+        // Cek di tabel anggota jika tidak ditemukan di pengguna
+        $dataAnggota = $anggotaModel->where('email', $email)->first();
+        if ($dataAnggota) {
+            $pass = $dataAnggota['password'];
+            if (password_verify($password, $pass)) {
+                $session->set([
+                    'id_anggota'    => $dataAnggota['id_anggota'],
+                    'nama'          => $dataAnggota['nama'],
+                    'email'         => $dataAnggota['email'],
+                    'role'          => 'anggota',
+                    'logged_in'     => true
+                ]);
+                return redirect()->to('/dashboard');
+            } else {
+                return redirect()->back()->with('error', 'Email atau password salah!');
+            }
+        }
+
+        // Email tidak ditemukan di kedua tabel
+        return redirect()->back()->with('error', 'Email atau password salah!');
     }
 
     public function logout()
     {
-        $session = session();
-        $session->destroy();
+        session()->destroy();
         return redirect()->to('/');
     }
 }

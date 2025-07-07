@@ -16,7 +16,7 @@ class AnggotaController extends BaseController
 
     public function tambah()
     {
-        return view('anggota/tambah'); // ✅ perubahan: ganti \ dengan /
+        return view('admin/dashboard/anggota/tambah'); // ✅ perubahan: ganti \ dengan /
     }
 
     public function simpan()

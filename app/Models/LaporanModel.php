@@ -7,12 +7,23 @@ use CodeIgniter\Model;
 class LaporanModel extends Model
 {
     protected $table            = 'laporan';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_laporan';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['nama', 'email', 'text_laporan'];
+    protected $allowedFields    = [
+        'id_laporan',
+        'id_pengguna',
+        'jenis',
+        'judul',
+        'lok_kejadian',
+        'objek',
+        'text_laporan',
+        'harapan',
+        'tanggal_dibuat',
+        'nama_pelapor'
+    ];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

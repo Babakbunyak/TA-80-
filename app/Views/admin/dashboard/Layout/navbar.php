@@ -23,7 +23,7 @@
                 <a class="nav-link" href="<?= base_url('anggota'); ?>">
                     <div class="sb-nav-link-icon"><i class="bi bi-person-lines-fill"></i></div>
                     Anggota
-</a>
+                </a>
                 <a class="nav-link" href="<?= base_url('upber'); ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Uploud Berita

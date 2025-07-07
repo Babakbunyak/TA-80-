@@ -8,15 +8,15 @@ class DokumentasiModel extends Model
 {
     public function getDokumentasiTerbaru($limit)
     {
-        return $this->limit($limit)->orderBy('created_at', 'isi')->findall();
+        return $this->limit($limit)->orderBy('tanggal', 'desc')->findall();
     }
-    protected $table            = 'upload_dokumentasi';
-    protected $primaryKey       = 'id';
+    protected $table            = 'dokumentasi';
+    protected $primaryKey       = 'id_dokumentasi';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['judul', 'isi', 'gambar', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['id_dokumentasi', 'judul', 'deskripsi', 'image', 'id_anggota', 'tanggal'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

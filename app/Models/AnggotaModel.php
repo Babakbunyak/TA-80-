@@ -7,12 +7,12 @@ use CodeIgniter\Model;
 class AnggotaModel extends Model
 {
     protected $table            = 'anggota';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_anggota';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_anggota', 'nama_depan', 'nama_belakang', 'foto', 'alamat', 'email', 'password', 'no_telp', 'status_akses', 'created_at', 'updated_at'];
+    protected $allowedFields    = ['id_anggota', 'nama', 'no_ktp', 'tanggal_lahir', 'alamat', 'no_telp', 'foto', 'jabatan', 'email', 'password', 'status_anggota'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
