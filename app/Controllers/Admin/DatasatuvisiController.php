@@ -8,7 +8,7 @@ use App\Models\SatuvisiModel;
 use App\Models\LaporanModel;
 
 
-class DataSatuvisiController extends BaseController
+class DatasatuvisiController extends BaseController
 {
     public function index()
     {

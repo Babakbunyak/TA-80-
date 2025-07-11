@@ -21,7 +21,6 @@ class AnggotaController extends BaseController
 
     public function simpan()
     {
-        // ✅ perubahan: tambah validasi input
         if (!$this->validate([
             'nama' => 'required|min_length[3]',
             'alamat' => 'required',
@@ -34,21 +33,30 @@ class AnggotaController extends BaseController
 
         $model = new AnggotaModel();
 
-        // ✅ perubahan: perbaiki struktur data
+        $fileFoto = $this->request->getFile('foto');
+        $folderPath = 'uploads/foto';
+        if (!is_dir($folderPath)) {
+            mkdir($folderPath, 0777, true);
+        }
+        if ($fileFoto && $fileFoto->isValid() && !$fileFoto->hasMoved()) {
+            $namaFoto = $fileFoto->getRandomName();
+            $fileFoto->move($folderPath, $namaFoto);
+        } else {
+            $namaFoto = 'default.png';
+        }
+
         $data = [
             'nama' => $this->request->getPost('nama'),
             'alamat' => $this->request->getPost('alamat'),
+            'foto' => $namaFoto,
             'jabatan' => $this->request->getPost('jabatan'),
             'email' => $this->request->getPost('email'),
             'no_telp' => $this->request->getPost('no_telp'),
         ];
         $model->save($data);
 
-        // ✅ perubahan: tambah flash message
         session()->setFlashdata('success', 'Data anggota berhasil disimpan.');
-
-        // ✅ perubahan: gunakan base_url() untuk redirect
-        return redirect()->to(base_url('admin/anggota'));
+        return redirect()->to(base_url('anggota'));
     }
 
     public function edit($id)
@@ -60,7 +68,6 @@ class AnggotaController extends BaseController
 
     public function update($id)
     {
-        // ✅ perubahan: tambah validasi input
         if (!$this->validate([
             'nama' => 'required|min_length[3]',
             'alamat' => 'required',
@@ -72,19 +79,33 @@ class AnggotaController extends BaseController
         }
 
         $model = new AnggotaModel();
+
+        $fileFoto = $this->request->getFile('foto');
+        $folderPath = 'uploads/foto';
+        if (!is_dir($folderPath)) {
+            mkdir($folderPath, 0777, true);
+        }
+
+        $anggota = $model->find($id);
+        $namaFoto = $anggota['foto'] ?? 'default.png';
+
+        if ($fileFoto && $fileFoto->isValid() && !$fileFoto->hasMoved()) {
+            $namaFotoBaru = $fileFoto->getRandomName();
+            $fileFoto->move($folderPath, $namaFotoBaru);
+            $namaFoto = $namaFotoBaru;
+        }
+
         $data = [
             'nama' => $this->request->getPost('nama'),
             'alamat' => $this->request->getPost('alamat'),
+            'foto' => $namaFoto,
             'jabatan' => $this->request->getPost('jabatan'),
             'email' => $this->request->getPost('email'),
             'no_telp' => $this->request->getPost('no_telp'),
         ];
         $model->update($id, $data);
 
-        // ✅ perubahan: tambah flash message
         session()->setFlashdata('success', 'Data anggota berhasil diperbarui.');
-
-        // ✅ perubahan: gunakan base_url() untuk redirect
         return redirect()->to(base_url('admin/anggota'));
     }
 

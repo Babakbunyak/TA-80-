@@ -8,7 +8,7 @@ use App\Models\SatuvisiModel;
 use App\Models\LaporanModel;
 
 
-class DataSatuvisiController2 extends BaseController
+class DatasatuvisiController2 extends BaseController
 {
     public function index2()
     {
@@ -16,14 +16,14 @@ class DataSatuvisiController2 extends BaseController
             'title' => 'Data Laporan',
         ];
         $model = new LaporanModel();
-        $data['laporan'] = $model->findAll();
+        $data['laporan'] = $model->where('jenis', 'laporan')->findAll();
         return view('admin\dashboard\data\index2', $data);
     }
     public function detail($id)
     {
         $model = new LaporanModel();
         $data['laporan'] = $model->find($id);
-        return view('laporan/detail', $data);
+        return view('admin/dashboard/data/detail_laporan', $data);
     }
     public function hapus($id_laporan)
     {
