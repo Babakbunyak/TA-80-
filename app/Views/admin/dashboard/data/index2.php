@@ -80,7 +80,7 @@
                                                 </td>
                                                 <td><?= esc($row['tanggal_dibuat']); ?></td>
                                                 <td>
-                                                    <a href="<?= base_url('laporan/detail/' . $row['id_laporan']); ?>" class="btn btn-sm btn-info mb-1">Detail</a>
+                                                    <a href="<?= base_url('admin/dashboard/data/detail/' . $row['id_laporan']); ?>" class="btn btn-sm btn-info mb-1">Detail</a>
                                                     <form action="<?= base_url('laporan/hapus/' . $row['id_laporan']); ?>" method="post" style="display:inline;">
                                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus laporan ini?')">Hapus</button>
                                                     </form>

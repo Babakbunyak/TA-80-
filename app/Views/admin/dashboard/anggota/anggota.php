@@ -29,7 +29,14 @@
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td>
-                                        <img src="<?= base_url('uploads/foto/' . $row['foto']); ?>" alt="Foto" width="50">
+                                        <?php
+                                        $foto = !empty($row['foto']) ? $row['foto'] : 'default.png';
+                                        $fotoPath = FCPATH . 'uploads/foto/' . $foto;
+                                        if (!file_exists($fotoPath) || empty($row['foto'])) {
+                                            $foto = 'default.png';
+                                        }
+                                        ?>
+                                        <img src="<?= base_url('uploads/foto/' . $foto); ?>" alt="Foto" width="50">
                                     </td>
                                     <td><?= $row['nama']; ?></td>
 

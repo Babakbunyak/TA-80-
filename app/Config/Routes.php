@@ -20,8 +20,9 @@ $routes->get('data_satuvisi', 'Admin\DatasatuvisiController::index');
 
 // route admin data(data laporan)
 $routes->get('data', 'Admin\DatasatuvisiController2::index2');
-$routes->get('admin/dashboard/data/index2', 'Admin\DataSatuvisiController2::index2');
+$routes->get('admin/dashboard/data/index2', 'Admin\DatasatuvisiController2::index2');
 $routes->post('laporan/hapus/(:num)', 'Admin\DatasatuvisiController2::hapus/$1');
+$routes->get('admin/dashboard/data/detail/(:num)', 'Admin\DatasatuvisiController2::detail/$1');
 
 //Anggota
 $routes->get('anggota', 'Admin\AnggotaController::anggota');

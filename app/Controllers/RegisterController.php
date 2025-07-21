@@ -40,6 +40,7 @@ class RegisterController extends BaseController
         $tanggal_lahir = $this->request->getPost('tanggal_lahir');
         $no_ktp = $this->request->getPost('no_ktp');
         $alamat = $this->request->getPost('alamat');
+        $no_telp = $this->request->getPost('no_telp');
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
@@ -50,6 +51,7 @@ class RegisterController extends BaseController
             'tanggal_lahir' => $tanggal_lahir,
             'no_ktp' => $no_ktp,
             'alamat' => $alamat,
+            'no_telp' => $no_telp,
             'email' => $email,
             'password' => password_hash($password, PASSWORD_DEFAULT),
         ];
