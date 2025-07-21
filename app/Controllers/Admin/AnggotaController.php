@@ -28,6 +28,7 @@ class AnggotaController extends BaseController
             'jabatan' => 'required',
             'email' => 'required|valid_email',
             'no_telp' => 'required|numeric',
+            'password' => 'required|min_length[8]',
         ])) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
         }
@@ -41,6 +42,7 @@ class AnggotaController extends BaseController
             'jabatan' => $this->request->getPost('jabatan'),
             'email' => $this->request->getPost('email'),
             'no_telp' => $this->request->getPost('no_telp'),
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ];
         $model->save($data);
 
@@ -66,6 +68,7 @@ class AnggotaController extends BaseController
             'alamat' => 'required',
             'jabatan' => 'required',
             'email' => 'required|valid_email',
+            'password' => 'required|min_length[8]',
             'no_telp' => 'required|numeric',
         ])) {
             return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
@@ -78,6 +81,7 @@ class AnggotaController extends BaseController
             'jabatan' => $this->request->getPost('jabatan'),
             'email' => $this->request->getPost('email'),
             'no_telp' => $this->request->getPost('no_telp'),
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
         ];
         $model->update($id, $data);
 

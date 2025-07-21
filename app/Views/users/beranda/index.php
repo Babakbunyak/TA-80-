@@ -234,10 +234,13 @@
                     <!-- Card 1 -->
                     <div class="col-lg-4 col-md-6">
                         <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/1.jpg" class="card-img-top" alt="Mesir Kuno">
+                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/h.jpg" class="card-img-top" alt="Mesir Kuno">
                             <div class="card-body">
-                                <h5 class="card-title">Mesir Kuno</h5>
-                                <p class="card-text">Mesir Kuno dikenal dengan pencapaian arsitekturnya, termasuk Piramida Giza dan Sphinx yang menjadi simbol peradaban kuno.</p>
+                                <h5 class="card-title">Awal Satu Visi Terbentuk</h5>
+                                <p class="card-text">Ide berdirrinyaYSV oleh Saya dengan bapapk Alfonsus Y.Bora. Saat itu kami bekerja di LSM sebagai pendamping Lapangan.
+                                    Waktu itu baru ada 5 LSM di Sumba.
+                                    Dalam perjalanan bekerja sambil belajar di dunia LSM, kami berdua merasa bahwa pelatih-pelatih kami semua adalah orang² dari luar Sumba, yakni dari Jakarta, Denpasar, Mataram dan Kupang. Tidak ada satu orangpun pelatih orang Sumba. Rata2 kami bekeeja sebagai staf pendamping desa. Dalam perjalanan 3-5 tahun kami bekerja di LSM makin kuat keinginan kami untuk mewujudkan keinginan yakni memperbanyak pelatih2 orang Sumba yang memiliki skill yg bagus.
+                                    Hal kedua adalah sangat sedikit perempuan sumba yang bekerja di ruang publik. Rata2 perempuan bekeeja sebagai ibu Rumah Tangga dan paling tinggi menjadi ibu Guru.</p>
                             </div>
                         </div>
                     </div>
@@ -247,8 +250,9 @@
                         <div class="card">
                             <img src="<?= base_url('assets'); ?>/img/banner/2.jpg" class="card-img-top" alt="Kekaisaran Romawi">
                             <div class="card-body">
-                                <h5 class="card-title">Kekaisaran Romawi</h5>
-                                <p class="card-text">Kekaisaran Romawi adalah salah satu kekaisaran terbesar dan paling berpengaruh dalam sejarah dunia, mencakup sebagian besar Eropa, Asia, dan Afrika.</p>
+                                <h5 class="card-title">Isu Yang Beredar Di Masa itu</h5>
+                                <p class="card-text">Masalah keterbelakangan perempuan Sumba menjadi.kegundahan saya. Diantaranya perempuan diragukan kemampuannya dalam memimpin. Teebukti pertemuan2 di.level desa hampir tidak ada perwmpuan yg duduk sebagai peserta.pertemuan, apalagi teelibat dalam.pengambilan keputusan. Paling hanya istri kepala desa saja itulun sebagai ketua konsumsi. Jadi perempuan selalu mendapat peran sebagai penyedia konsumsi dipertemuan2 desa. Hal inilah kemudian yg mennjadi dasar berdirinya YSV. Peegumulan mendirikan YSV beejalan 3 tahun lebih. Sambil.belajar di LSM kami terus menempa kemampuan pribadi. Kebwtulan saat itu saya dipercaya menjadi manajer program disalah satu LSM, dan ini sangat langka. Saya merasa peecaya bahwa perwmouan Sumba hanya butuh kesempatan untuk maju.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -258,8 +262,8 @@
                         <div class="card">
                             <img src="<?= base_url('assets'); ?>/img/banner/3.jpg" class="card-img-top" alt="Renaisans">
                             <div class="card-body">
-                                <h5 class="card-title">Renaisans</h5>
-                                <p class="card-text">Era Renaisans menandai kebangkitan kembali seni, sains, dan budaya Eropa setelah Abad Pertengahan, membawa perubahan besar dalam pemikiran dan kreativitas manusia.</p>
+                                <h5 class="card-title">Perjuangan dan Kerja Keras</h5>
+                                <p class="card-text">Pada saat berdiri YSV mempunyai 4 staf dan belum ada donor yang mendukung. Kami berdua manfaatkan penghasilan kami yg kecil di LSM lain, mulai menyewa ruangan, amembeli comlutee /PC second serta swadaya memfasilitasimpertwmuan dgn kelompom masyarajat di desa terutama kelompompok perempuan.Hal pertama yg kami.lakukan dgn kelompk.di desa yakni melakukan Asesment kebutuhan masyarakat desa teemasuk kebutuhan kelompok perempuan. setelah 1 tahun berdiri, yakni pada Mei 2006 YSV mendapat kepercayaan dari Pemerintah Provinsi NTT yakni Dinas Penyuluhan Pertanian Terpadu . Yakni YSV menjadi Lembaga Konsultan Program PIDRA (Participatory Integrated Development Rainfid Area/ program Partisipasi Lahan Kering untuk pengembangan ekonomi masyarakat desa dan Ketahanan Langan di 18 Desa di Kabupaten Sumba Barat. Program PIDRA saat itu didukung oleh IFAD</p>
                             </div>
                         </div>
                     </div>
@@ -269,8 +273,8 @@
                         <div class="card">
                             <img src="<?= base_url('assets'); ?>/img/banner/4.jpg" class="card-img-top" alt="Revolusi Industri">
                             <div class="card-body">
-                                <h5 class="card-title">Revolusi Industri</h5>
-                                <p class="card-text">Revolusi Industri mengubah cara produksi barang dari metode tradisional ke pabrik-pabrik modern, membawa kemajuan besar dalam teknologi dan ekonomi dunia.</p>
+                                <h5 class="card-title">IFAD</h5>
+                                <p class="card-text">IFAD adalah singkatan dari International Fund for Agricultural Development, atau dalam bahasa Indonesianya, Dana Internasional untuk Pengembangan Pertanian. IFAD adalah badan khusus Perserikatan Bangsa-Bangsa (PBB) yang berfokus pada pemberantasan kemiskinan dan kelaparan di daerah pedesaan negara-negara berkembang termasuk Indonesia.</p>
                             </div>
                         </div>
                     </div>

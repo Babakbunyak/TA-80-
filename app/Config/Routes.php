@@ -16,7 +16,7 @@ $routes->get('/', 'BerandaController::index');
 $routes->get('dashboard', 'Admin\DashboardController::index');
 
 // route admin data_satuvisi(data aspirasi)
-$routes->get('data_satuvisi', 'Admin\DatasatuvisiController2::index2');
+$routes->get('data_satuvisi', 'Admin\DatasatuvisiController::index');
 
 // route admin data(data laporan)
 $routes->get('data', 'Admin\DatasatuvisiController2::index2');
@@ -25,10 +25,13 @@ $routes->post('laporan/hapus/(:num)', 'Admin\DatasatuvisiController2::hapus/$1')
 
 //Anggota
 $routes->get('anggota', 'Admin\AnggotaController::anggota');
+$routes->get('admin/anggota', 'Admin\AnggotaController::anggota');
+$routes->get('admin/dashboard/anggota/anggota', 'Admin\AnggotaController::anggota');
 $routes->get('anggota/tambah', 'Admin\AnggotaController::tambah');
 $routes->post('anggota/simpan', 'Admin\AnggotaController::simpan');
 $routes->get('anggota/edit/(:num)', 'Admin\AnggotaController::edit/$1');
 $routes->post('anggota/update/(:num)', 'Admin\AnggotaController::update/$1');
+$routes->get('anggota/hapus/(:num)', 'Admin\AnggotaController::hapus/$1');
 
 //Upload Berita
 $routes->get('admin/upload_berita', 'Admin\UpberitaController::uploadberita');
@@ -71,3 +74,8 @@ $routes->get('Berita3', 'Berita3Controller::berita3');
 $routes->get('/laporan', 'LaporanController::laporan');
 $routes->post('laporan/kirimLaporan', 'LaporanController::kirimLaporan');
 $routes->post('laporan/kirimAspirasi', 'LaporanController::kirimAspirasi');
+
+
+$routes->get('/profil', 'ProfilController::index');
+$routes->post('/profil/update', 'ProfilController::updateProfile');
+$routes->post('/profil/password', 'ProfilController::changePassword');

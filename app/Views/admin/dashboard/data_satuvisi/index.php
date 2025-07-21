@@ -4,7 +4,6 @@
 
 <div id="layoutSidenav_content">
     <main>
-        <pre><?php print_r($laporan); ?></pre>
         <div class="container-fluid px-4">
             <h1 class="mt-4">Data Aspirasi</h1>
             <ol class="breadcrumb mb-4">
