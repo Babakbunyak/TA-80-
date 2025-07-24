@@ -9,7 +9,9 @@ use CodeIgniter\Router\RouteCollection;
 // test database
 $routes->get('/test', 'Home::index');
 
-
+// route user sudah login
+$routes->get('user_login', 'SudahLoginController::sudah_login');
+// route beranda
 $routes->get('/', 'BerandaController::index');
 
 // route admin dashboard
