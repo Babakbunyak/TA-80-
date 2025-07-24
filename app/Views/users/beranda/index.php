@@ -63,6 +63,7 @@
                     <li><a href="#portfolio">Sejarah</a></li>
                     <li><a href="#team">Pengurus</a></li>
                     <li><a href="#contact">Kontak</a></li>
+                    <li><a href="<?= base_url('auth'); ?>">login</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -187,10 +188,12 @@
         <!-- More Services Section -->
         <section id="more-services" class="more-services section">
             <!-- Section Title -->
+
             <div class="container section-title" data-aos="fade-up">
                 <h2>Dokumentasi Kegiatan</h2>
                 <p>Kegiatan Satu Visi Untuk Masyarakat :</p>
             </div><!-- End Section Title -->
+
 
             <div class="container">
                 <div class="row gy-4">

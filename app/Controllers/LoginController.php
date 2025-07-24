@@ -6,8 +6,23 @@ use App\Controllers\BaseController;
 use App\Models\PenggunaModel;
 use App\Models\AnggotaModel;
 
+use App\Libraries\AuthLibrary;
+
 class LoginController extends BaseController
 {
+    private $msg;
+    private $authLibrary;
+
+    public function __construct()
+    {
+        $this->authLibrary = new AuthLibrary();
+    }
+
+    private function display_msg($msg)
+    {
+        $this->msg .= $msg . nl2br("\n");
+    }
+
     public function login()
     {
         return view('auth/login');
@@ -31,7 +46,6 @@ class LoginController extends BaseController
         ])) {
             return redirect()->back()->withInput()->with('validation', $this->validator);
         }
-
         // Cek di tabel pengguna
         $data = $penggunaModel->where('email', $email)->first();
 
@@ -78,6 +92,6 @@ class LoginController extends BaseController
     public function logout()
     {
         session()->destroy();
-        return redirect()->to('/');
+        return redirect()->to('auth');
     }
 }

@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class AnggotaModel extends Model
 {
+    protected $login = 'login';
     protected $table            = 'anggota';
     protected $primaryKey       = 'id_anggota';
     protected $useAutoIncrement = true;
@@ -13,6 +14,20 @@ class AnggotaModel extends Model
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
     protected $allowedFields    = ['id_anggota', 'nama', 'no_ktp', 'tanggal_lahir', 'alamat', 'no_telp', 'foto', 'jabatan', 'email', 'password', 'status_anggota'];
+
+    function get_login($email, $password)
+    {
+        $builder = $this->db->table('pengguna');
+        $builder->where('email', $email);
+        $query = $builder->get();
+        if ($query->getNumRows() > 0) {
+            $data = $query->getRowArray();
+            if (password_verify($password, $data['password'])) {
+                return $data;
+            }
+        }
+        return false;
+    }
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -55,12 +55,13 @@
             <nav id="navmenu" class="navmenu">
                 <ul>
                     <li><a href="/#hero" class="active">Beranda</a></li>
-                    <li><a href="/#about">Buat Laporan</a></li>
+                    <li><a href="/laporan/laporan">Buat Laporan</a></li>
                     <li><a href="/#services">Berita</a></li>
                     <li><a href="/#portfolio">Sejarah</a></li>
                     <li><a href="/#team">Pengurus</a></li>
 
                     <li><a href="/#contact">Kontak</a></li>
+                    <li><a href="<?= base_url('profil'); ?>">Profil</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

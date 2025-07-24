@@ -24,6 +24,20 @@ class PenggunaModel extends Model
         'password'
     ];
 
+    function get_login($email, $password)
+    {
+        $builder = $this->db->table('pengguna');
+        $builder->where('email', $email);
+        $query = $builder->get();
+        if ($query->getNumRows() > 0) {
+            $data = $query->getRowArray();
+            if (password_verify($password, $data['password'])) {
+                return $data;
+            }
+        }
+        return false;
+    }
+
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
 

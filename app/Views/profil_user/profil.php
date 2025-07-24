@@ -21,10 +21,10 @@
         <div class="card-body bg-white">
             <h5 class="text-center mb-4"><i class="bi bi-info-circle-fill text-primary me-1"></i> Informasi Profil</h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="bi bi-person-fill me-2 text-muted"></i> <strong>Nama Lengkap:</strong> <?= $nama ?></li>
-                <li class="list-group-item"><i class="bi bi-envelope-fill me-2 text-muted"></i> <strong>Email:</strong> <?= $email ?></li>
-                <li class="list-group-item"><i class="bi bi-bar-chart-fill me-2 text-muted"></i> <strong>Status Laporan:</strong> <span class="badge-status"><?= $status ?></span></li>
-                <li class="list-group-item"><i class="bi bi-clock-fill me-2 text-muted"></i> <strong>Terakhir Login:</strong> <?= $last_login ?></li>
+                <li class="list-group-item"><i class="bi bi-person-fill me-2 text-muted"></i> <strong>Nama Lengkap: </strong> </li>
+                <li class="list-group-item"><i class="bi bi-envelope-fill me-2 text-muted"></i> <strong>Email:</strong> </li>
+                <li class="list-group-item"><i class="bi bi-bar-chart-fill me-2 text-muted"></i> <strong>Status Laporan:</strong> <span class="badge-status"></span></li>
+                <li class="list-group-item"><i class="bi bi-clock-fill me-2 text-muted"></i> <strong>Terakhir Login:</strong> </li>
             </ul>
 
             <div class="text-center mt-4">
@@ -46,11 +46,11 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $nama ?>" required>
+                            <input type="text" class="form-control" id="nama" name="nama" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" value="<?= $email ?>" required>
+                            <input type="email" class="form-control" id="email" name="email" required>
                         </div>
                     </div>
                     <div class="modal-footer">

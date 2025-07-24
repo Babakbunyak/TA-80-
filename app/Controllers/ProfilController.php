@@ -2,16 +2,14 @@
 
 namespace App\Controllers;
 
+use App\Models\PenggunaModel;
+
 class ProfilController extends BaseController
 {
     public function index()
     {
-        $data = [
-            'nama' => 'John Doe',
-            'email' => 'john.doe@email.com',
-            'status' => 'Aktif - 5 Laporan Selesai',
-            'last_login' => '15 Januari 2024, 14:30 WIB'
-        ];
+        $model = new PenggunaModel();
+        $data['pengguna'] = $model->find(session()->get('id_pengguna'));
         return view('profil_user/profil', $data);
     }
 
