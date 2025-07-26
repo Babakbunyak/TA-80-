@@ -25,6 +25,8 @@ $routes->get('data', 'Admin\DatasatuvisiController2::index2');
 $routes->get('admin/dashboard/data/index2', 'Admin\DatasatuvisiController2::index2');
 $routes->post('laporan/hapus/(:num)', 'Admin\DatasatuvisiController2::hapus/$1');
 $routes->get('admin/dashboard/data/detail/(:num)', 'Admin\DatasatuvisiController2::detail/$1');
+$routes->get('admin/dashboard/data/printpdf', 'Admin\DatasatuvisiController2::printpdf');
+$routes->get('admin/dashboard/data/printpdf/(:num)', 'Admin\DatasatuvisiController2::printpdf/$1');
 
 //Anggota
 $routes->get('anggota', 'Admin\AnggotaController::anggota');
@@ -45,6 +47,7 @@ $routes->get('admin/berita/detail/(:num)', 'Admin\UpberitaController::detail/$1'
 
 //Upload dokumentasi
 $routes->get('updoc', 'Admin\UpdocController::uploaddoc');
+$routes->get('listdoc', 'Admin\UpdocController::listdoc');
 $routes->post('admin/upload_dokumentasi/upload', 'Admin\UpdocController::upload');
 $routes->get('admin/upload_dokumentasi', 'Admin\UpdocController::uploaddoc');
 
@@ -58,8 +61,11 @@ $routes->get('logout', 'LoginController::logout');
 $routes->get('laporan/laporan', 'LaporanController::laporan');
 
 //route tampilan register
+
 $routes->get('register', 'RegisterController::register');
 $routes->post('register/proses', 'RegisterController::proses');
+$routes->get('register/verifyinfo', 'RegisterController::verifyinfo');
+$routes->post('register/verify', 'RegisterController::verify');
 
 // route tampilan berita
 $routes->get('berita', 'Berita1Controller::berita1');

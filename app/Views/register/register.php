@@ -58,7 +58,11 @@
                         <div class="p-5">
                             <?php if ($validation = session()->getFlashdata('validation')): ?>
                                 <div class="alert alert-danger" role="alert">
-                                    <?= is_array($validation) ? implode('<br>', $validation) : $validation->listErrors(); ?>
+                                    <?php
+                                    foreach ($validation as $error) {
+                                        echo $error . '<br>';
+                                    }
+                                    ?>
                                 </div>
                             <?php endif; ?>
                             <div class="text-center">

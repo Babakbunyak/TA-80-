@@ -17,10 +17,18 @@ class ProfilController extends BaseController
     {
         $nama = $this->request->getPost('nama');
         $email = $this->request->getPost('email');
-
-        // Di sini kamu bisa simpan ke database
-        // Contoh simpan atau validasi
-
+        $id = session()->get('id_pengguna');
+        if (!$id) {
+            return redirect()->to('/profil')->with('error', 'User tidak ditemukan.');
+        }
+        $model = new PenggunaModel();
+        $model->update($id, [
+            'nama' => $nama,
+            'email' => $email
+        ]);
+        // Update session jika perlu
+        session()->set('nama', $nama);
+        session()->set('email', $email);
         return redirect()->to('/profil')->with('success', 'Profil berhasil diperbarui.');
     }
 

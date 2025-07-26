@@ -50,7 +50,7 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <a href="<?= base_url('/anggota/edit/' . $row['id_anggota']); ?>" class="btn btn-sm btn-info">Edit</a>
+                                        <a href="<?= base_url('/anggota/tambah/' . $row['id_anggota']); ?>" class="btn btn-sm btn-info">Edit</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

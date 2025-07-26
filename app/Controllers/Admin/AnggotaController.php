@@ -11,12 +11,12 @@ class AnggotaController extends BaseController
     {
         $model = new AnggotaModel();
         $data['anggota'] = $model->findAll();
-        return view('admin/dashboard/anggota/anggota', $data); // ✅ perubahan: ganti \ dengan /
+        return view('admin/dashboard/anggota/anggota', $data);
     }
 
     public function tambah()
     {
-        return view('admin/dashboard/anggota/tambah'); // ✅ perubahan: ganti \ dengan /
+        return view('admin/dashboard/anggota/tambah');
     }
 
     public function simpan()
@@ -48,12 +48,15 @@ class AnggotaController extends BaseController
 
         $data = [
             'nama' => $this->request->getPost('nama'),
+            'no_ktp' => $this->request->getPost('no_ktp'),
+            'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
             'alamat' => $this->request->getPost('alamat'),
+            'no_telp' => $this->request->getPost('no_telp'),
             'foto' => $namaFoto,
             'jabatan' => $this->request->getPost('jabatan'),
             'email' => $this->request->getPost('email'),
-            'no_telp' => $this->request->getPost('no_telp'),
-            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT)
+            'password' => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'status_anggota' => $this->request->getPost('status_anggota'),
         ];
         $model->save($data);
 
@@ -65,7 +68,7 @@ class AnggotaController extends BaseController
     {
         $model = new AnggotaModel();
         $data['anggota'] = $model->find($id);
-        return view('anggota/edit', $data); // ✅ perubahan: ganti \ dengan /
+        return view('anggota/tambah', $data); // ✅ perubahan: ganti \ dengan /
     }
 
     public function update($id)

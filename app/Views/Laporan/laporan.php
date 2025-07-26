@@ -61,7 +61,7 @@
                     <li><a href="/#team">Pengurus</a></li>
 
                     <li><a href="/#contact">Kontak</a></li>
-                    <li><a href="<?= base_url('logout'); ?>">Profil</a></li>
+                    <li><a href="<?= base_url('profil'); ?>">Profil</a></li>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>

@@ -6,6 +6,9 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\SatuvisiModel;
 use App\Models\LaporanModel;
+use Dompdf\Dompdf;
+
+require_once(ROOTPATH . 'vendor/autoload.php');
 
 
 class DatasatuvisiController2 extends BaseController
@@ -35,5 +38,25 @@ class DatasatuvisiController2 extends BaseController
         } else {
             return redirect()->back()->with('error', 'Data laporan tidak ditemukan!');
         }
+    }
+    public function printpdf($id_laporan = null)
+    {
+        $model = new LaporanModel();
+        if ($id_laporan) {
+            $laporan = $model->find($id_laporan);
+            if (!$laporan) {
+                throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound('Laporan tidak ditemukan');
+            }
+            $data['laporan'] = [$laporan];
+        } else {
+            $data['laporan'] = $model->where('jenis', 'laporan')->findAll();
+        }
+        $html = view('admin/dashboard/data/pdf_laporan', $data);
+        $dompdf = new \Dompdf\Dompdf();
+        $dompdf->loadHtml($html);
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->render();
+        $dompdf->stream('data_laporan.pdf', ['Attachment' => false]);
+        exit;
     }
 }

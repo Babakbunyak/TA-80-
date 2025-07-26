@@ -138,7 +138,7 @@
                     <div class="overlay bg-black position-absolute top-0 start-0 w-100 h-100 opacity-50"></div> <!-- Overlay hitam semi-transparan -->
                     <div class="content position-relative z-3 text-white">
                         <p class="large-text">Layanan Aspirasi dan Pengaduan Masyarakat</p>
-                        <a href="register" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
+                        <a href="laporan\laporan" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
                     </div>
                 </div>
             </div>

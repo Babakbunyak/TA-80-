@@ -63,7 +63,11 @@
                     <li><a href="#portfolio">Sejarah</a></li>
                     <li><a href="#team">Pengurus</a></li>
                     <li><a href="#contact">Kontak</a></li>
-                    <li><a href="<?= base_url('auth'); ?>">login</a></li>
+                    <?php if (session()->get('logged_in')): ?>
+                        <li><a href="<?= base_url('profil'); ?>">Profil</a></li>
+                    <?php else: ?>
+                        <li><a href="<?= base_url('auth'); ?>">Login</a></li>
+                    <?php endif; ?>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -138,7 +142,11 @@
                     <div class="overlay bg-black position-absolute top-0 start-0 w-100 h-100 opacity-50"></div> <!-- Overlay hitam semi-transparan -->
                     <div class="content position-relative z-3 text-white">
                         <p class="large-text">Layanan Aspirasi dan Pengaduan Masyarakat</p>
-                        <a href="register" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
+                        <?php if (session()->get('logged_in')): ?>
+                            <a href="<?= base_url('laporan/laporan'); ?>" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
+                        <?php else: ?>
+                            <a href="<?= base_url('register'); ?>" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>

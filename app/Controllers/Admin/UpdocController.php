@@ -15,6 +15,13 @@ class UpdocController extends BaseController
         return view('admin/dashboard/upload-doc/uploaddoc', $data);
     }
 
+    public function listdoc()
+    {
+        $model = new DokumentasiModel();
+        $data['dokumentasi'] = $model->findAll();
+        return view('admin/dashboard/upload-doc/upload-doclist', $data);
+    }
+
     public function upload()
     {
         $judul = $this->request->getPost('judul');

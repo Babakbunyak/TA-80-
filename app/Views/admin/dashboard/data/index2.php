@@ -21,6 +21,9 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             <?php endif; ?>
+            <a href="<?= base_url('admin/dashboard/data/printpdf'); ?>" class="btn btn-danger mb-3" target="_blank">
+                <i class="fa fa-file-pdf"></i> Print PDF
+            </a>
             <div class="card mb-4">
                 <div class="card-body">
                     <div class="table-responsive">
@@ -81,6 +84,9 @@
                                                 <td><?= esc($row['tanggal_dibuat']); ?></td>
                                                 <td>
                                                     <a href="<?= base_url('admin/dashboard/data/detail/' . $row['id_laporan']); ?>" class="btn btn-sm btn-info mb-1">Detail</a>
+                                                    <a href="<?= base_url('admin/dashboard/data/printpdf/' . $row['id_laporan']); ?>" class="btn btn-sm btn-danger mb-1" target="_blank">
+                                                        <i class="fa fa-file-pdf"></i> PDF
+                                                    </a>
                                                     <form action="<?= base_url('laporan/hapus/' . $row['id_laporan']); ?>" method="post" style="display:inline;">
                                                         <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin ingin menghapus laporan ini?')">Hapus</button>
                                                     </form>

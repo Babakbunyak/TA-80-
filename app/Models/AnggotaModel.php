@@ -17,7 +17,7 @@ class AnggotaModel extends Model
 
     function get_login($email, $password)
     {
-        $builder = $this->db->table('pengguna');
+        $builder = $this->db->table('anggota');
         $builder->where('email', $email);
         $query = $builder->get();
         if ($query->getNumRows() > 0) {

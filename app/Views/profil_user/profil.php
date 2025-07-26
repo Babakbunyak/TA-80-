@@ -21,15 +21,16 @@
         <div class="card-body bg-white">
             <h5 class="text-center mb-4"><i class="bi bi-info-circle-fill text-primary me-1"></i> Informasi Profil</h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><i class="bi bi-person-fill me-2 text-muted"></i> <strong>Nama Lengkap: </strong> </li>
-                <li class="list-group-item"><i class="bi bi-envelope-fill me-2 text-muted"></i> <strong>Email:</strong> </li>
-                <li class="list-group-item"><i class="bi bi-bar-chart-fill me-2 text-muted"></i> <strong>Status Laporan:</strong> <span class="badge-status"></span></li>
-                <li class="list-group-item"><i class="bi bi-clock-fill me-2 text-muted"></i> <strong>Terakhir Login:</strong> </li>
+                <li class="list-group-item"><i class="bi bi-person-fill me-2 text-muted"></i> <strong>Nama Lengkap: </strong> <?= esc($pengguna['nama'] ?? '-') ?></li>
+                <li class="list-group-item"><i class="bi bi-envelope-fill me-2 text-muted"></i> <strong>Email:</strong> <?= esc($pengguna['email'] ?? '-') ?></li>
+                <li class="list-group-item"><i class="bi bi-bar-chart-fill me-2 text-muted"></i> <strong>Status Laporan:</strong> <span class="badge-status">-</span></li>
+                <li class="list-group-item"><i class="bi bi-clock-fill me-2 text-muted"></i> <strong>Terakhir Login:</strong> -</li>
             </ul>
 
             <div class="text-center mt-4">
                 <button class="btn btn-primary me-2" data-bs-toggle="modal" data-bs-target="#editProfileModal"><i class="bi bi-pencil-square me-1"></i> Edit Profil</button>
-                <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#changePasswordModal"><i class="bi bi-key me-1"></i> Ganti Password</button>
+                <button class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#changePasswordModal"><i class="bi bi-key me-1"></i> Ganti Password</button>
+                <a href="<?= base_url('logout') ?>" class="btn btn-danger"><i class="bi bi-box-arrow-right me-1"></i> Logout</a>
             </div>
         </div>
     </div>
@@ -46,11 +47,11 @@
                     <div class="modal-body">
                         <div class="mb-3">
                             <label for="nama" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="nama" name="nama" required>
+                            <input type="text" class="form-control" id="nama" name="nama" value="<?= esc($pengguna['nama'] ?? '') ?>" required>
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" required>
+                            <input type="email" class="form-control" id="email" name="email" value="<?= esc($pengguna['email'] ?? '') ?>" required>
                         </div>
                     </div>
                     <div class="modal-footer">

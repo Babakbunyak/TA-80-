@@ -74,7 +74,7 @@
                                     <form action="<?= base_url('login/authenticate') ?>" method="post">
                                         <?= csrf_field(); ?>
                                         <div class="form-group">
-                                            <input type="email" name="email" class="form-control form-control-user"
+                                            <input type="text" name="email" class="form-control form-control-user"
                                                 id="email" aria-describedby="emailHelp"
                                                 placeholder="Masukkan Email...">
                                         </div>

@@ -28,7 +28,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                     Uploud Berita
                 </a>
-                <a class="nav-link" href="<?= base_url('updoc'); ?>">
+                <a class="nav-link" href="<?= base_url('listdoc'); ?>">
                     <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                     Uploud Dokumentasi
                 </a>
