@@ -24,12 +24,16 @@
                     <div class="sb-nav-link-icon"><i class="bi bi-person-lines-fill"></i></div>
                     Anggota
                 </a>
+                <a class="nav-link" href="<?= base_url('pengguna'); ?>">
+                    <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                    Data Pengguna
+                </a>
                 <a class="nav-link" href="<?= base_url('upber'); ?>">
-                    <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                    <div class="sb-nav-link-icon"><i class="bi bi-newspaper"></i></div>
                     Uploud Berita
                 </a>
                 <a class="nav-link" href="<?= base_url('listdoc'); ?>">
-                    <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                    <div class="sb-nav-link-icon"><i class="bi bi-images"></i></div>
                     Uploud Dokumentasi
                 </a>
             </div>

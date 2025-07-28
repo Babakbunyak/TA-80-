@@ -37,6 +37,7 @@
                                     <th>objek</th>
                                     <th>isi laporan</th>
                                     <th>Tanggal dibuat</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -82,6 +83,15 @@
                                                     ?>
                                                 </td>
                                                 <td><?= esc($row['tanggal_dibuat']); ?></td>
+                                                <td>
+                                                    <?php
+                                                    $status = isset($row['status']) ? $row['status'] : 'proses';
+                                                    $badge = $status === 'selesai' ? 'success' : 'warning';
+                                                    ?>
+                                                    <span class="badge bg-<?= $badge ?>">
+                                                        <?= ucfirst($status) ?>
+                                                    </span>
+                                                </td>
                                                 <td>
                                                     <a href="<?= base_url('admin/dashboard/data/detail/' . $row['id_laporan']); ?>" class="btn btn-sm btn-info mb-1">Detail</a>
                                                     <a href="<?= base_url('admin/dashboard/data/printpdf/' . $row['id_laporan']); ?>" class="btn btn-sm btn-danger mb-1" target="_blank">

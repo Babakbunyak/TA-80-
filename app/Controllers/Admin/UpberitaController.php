@@ -7,46 +7,55 @@ use App\Models\BeritaModel;
 
 class UpberitaController extends BaseController
 {
+    public function tambah($id = null)
+    {
+        $beritaModel = new BeritaModel();
+        $berita = null;
+        if ($id) {
+            $berita = $beritaModel->find($id);
+        }
+        $data = [
+            'title' => $id ? 'Edit Berita' : 'Tambah Berita',
+            'berita' => $berita
+        ];
+        return view('admin/dashboard/upload_berita/formberita', $data);
+    }
     public function uploadberita()
     {
+        $beritaModel = new BeritaModel();
         $data = [
             'title' => 'Upload Berita',
+            'berita' => $beritaModel->findAll()
         ];
-
         return view('admin/dashboard/upload_berita/uploadberita', $data);
     }
 
     public function upload()
     {
-        $judul       = $this->request->getPost('judul');
-        $deskripsi = $this->request->getPost('deskripsi'); // input name dari form
-        $foto        = $this->request->getFile('foto');
-
-        // Ambil id_pengguna dan id_anggota dari session
-        $id_pengguna = session()->get('id_pengguna');
+        $judul = $this->request->getPost('judul');
+        $deskripsi = $this->request->getPost('deskripsi');
+        $image = $this->request->getFile('image');
         $id_anggota = session()->get('id_anggota');
 
-        if (!$id_pengguna) {
-            return redirect()->back()->with('error', 'Anda belum login sebagai admin.');
+        if (!$id_anggota) {
+            return redirect()->back()->with('error', 'Anda belum login.');
         }
 
-        if ($foto && $foto->isValid() && !$foto->hasMoved()) {
-            $nama_foto = $foto->getRandomName();
-            $foto->move('uploads/berita', $nama_foto);
+        if ($deskripsi && $image->isValid() && !$image->hasMoved()) {
+            $nama_image = $image->getRandomName();
+            $image->move('uploads/berita', $nama_image);
 
             $beritaModel = new BeritaModel();
             $data = [
                 'judul'        => $judul,
                 'deskripsi'  => $deskripsi,
-                'image'         => $nama_foto,
+                'image'         => $nama_image,
                 'id_anggota'     => $id_anggota,
-                'created_at'   => date('Y-m-d H:i:s'),
-                'updated_at'   => date('Y-m-d H:i:s'),
+                'tanggal'      => date('Y-m-d'),
             ];
 
             if ($beritaModel->insert($data)) {
-                $id = $beritaModel->getInsertID();
-                return redirect()->to('/admin/berita/detail/' . $id)->with('sukses', 'Berita berhasil diupload!');
+                return redirect()->to('/admin/upload_berita')->with('sukses', 'Berita berhasil diupload!');
             } else {
                 return redirect()->back()->with('error', 'Gagal mengupload berita!');
             }
@@ -62,7 +71,7 @@ class UpberitaController extends BaseController
         $berita = [
             'judul' => $beritaData['judul'] ?? '',
             'teks_berita' => $beritaData['deskripsi'] ?? '',
-            'foto' => $beritaData['image'] ?? '',
+            'image' => $beritaData['image'] ?? '',
         ];
         $data = [
             'title' => 'Upload Berita',

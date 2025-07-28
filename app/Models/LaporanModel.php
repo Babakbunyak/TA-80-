@@ -22,6 +22,7 @@ class LaporanModel extends Model
         'text_laporan',
         'harapan',
         'tanggal_dibuat',
+        'status',
         'nama_pelapor'
     ];
 

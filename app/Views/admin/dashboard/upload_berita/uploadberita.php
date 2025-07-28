@@ -2,77 +2,56 @@
 
 <?= $this->section('content') ?>
 
+
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Upload Berita</h1>
+            <h1 class="mt-4 mb-3">Berita</h1>
+            <button type="button" class="btn btn-success mb-2" onclick="location.href='<?= base_url('upber/tambah'); ?>'">Tambah</button>
 
-            <div class="card mb-4">
+            <div class="card mt-3 mb-3">
                 <div class="card-body">
-
-                    <!-- Flash Message -->
-                    <?php if (session()->getFlashdata('sukses')) : ?>
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <?= session()->getFlashdata('sukses') ?>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    <?php elseif (session()->getFlashdata('error')) : ?>
-                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <?= session()->getFlashdata('error') ?>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
-                    <?php endif; ?>
-
-                    <!-- Form Upload -->
-                    <form action="<?= base_url('admin/upload_berita/upload') ?>" method="post" enctype="multipart/form-data">
-                        <?= csrf_field(); ?>
-
-                        <!-- Judul -->
-                        <div class="mb-3">
-                            <label for="judul" class="form-label">Judul Berita</label>
-                            <input type="text" name="judul" id="judul" class="form-control" placeholder="Masukkan judul berita" required>
-                        </div>
-
-                        <!-- Teks Berita -->
-                        <div class="mb-3">
-                            <label for="deskripsi" class="form-label">Isi Berita</label>
-                            <textarea name="deskripsi" id="deskripsi" class="form-control" rows="6" placeholder="Tulis isi berita di sini..." required></textarea>
-                        </div>
-
-                        <!-- Upload Gambar -->
-                        <div class="mb-3">
-                            <label for="foto" class="form-label">Gambar Berita</label>
-                            <input type="file" name="foto" id="foto" class="form-control" accept="image/*" required onchange="previewImage(event)">
-                            <div class="mt-3 text-center">
-                                <img id="preview-img" src="#" alt="Preview Gambar" style="max-width:220px; max-height:180px; display:none; border-radius:8px; box-shadow:0 2px 8px #0002;" />
-                            </div>
-                        </div>
-
-                        <!-- Tombol Submit -->
-                        <button type="submit" class="btn btn-success w-100">Upload</button>
-                    </form>
-
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th style="width: 50px;">No.</th>
+                                    <th>Foto</th>
+                                    <th>Judul</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1;
+                                foreach ($berita as $row) : ?>
+                                    <tr>
+                                        <td style="width: 50px;"><?= $no++; ?></td>
+                                        <td>
+                                            <?php
+                                            $image = !empty($row['image']) ? $row['image'] : 'default.png';
+                                            $imagePath = FCPATH . 'uploads/berita/' . $image;
+                                            if (!file_exists($imagePath) || empty($row['image'])) {
+                                                $image = 'default.png';
+                                            }
+                                            ?>
+                                            <img src="<?= base_url('uploads/berita/' . $image); ?>" alt="Foto" width="50">
+                                        </td>
+                                        <td><?= esc($row['judul'] ?? '-'); ?></td>
+                                        <td>
+                                            <a href="<?= base_url('/upber/tambah/' . $row['id_berita']); ?>" class="btn btn-sm btn-info">Edit</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                                <?php if (empty($berita)) : ?>
+                                    <tr>
+                                        <td colspan="4" class="text-center">Tidak ada data berita.</td>
+                                    </tr>
+                                <?php endif; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
     </main>
 </div>
-<script>
-    function previewImage(event) {
-        const input = event.target;
-        const preview = document.getElementById('preview-img');
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                preview.src = e.target.result;
-                preview.style.display = 'inline-block';
-            }
-            reader.readAsDataURL(input.files[0]);
-        } else {
-            preview.src = '#';
-            preview.style.display = 'none';
-        }
-    }
-</script>
-
 <?= $this->endSection(); ?>

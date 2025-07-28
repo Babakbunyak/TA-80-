@@ -9,56 +9,68 @@
 
             <div class="card mt-3 mb-3">
                 <div class="card-body">
-                    <table class="table text-center">
-                        <thead>
-                            <tr>
-                                <th scope="col">No.</th>
-                                <th scope="col">Foto</th>
-                                <th scope="col">Nama</th>
-                                <th scope="col">Alamat</th>
-                                <th scope="col">Jabatan</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">No. Telp</th>
-                                <th scope="col">Status</th>
-                                <th scope="col">Aksi</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $no = 1;
-                            foreach ($anggota as $row) : ?>
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead class="table-dark">
                                 <tr>
-                                    <td><?= $no++; ?></td>
-                                    <td>
-                                        <?php
-                                        $foto = !empty($row['foto']) ? $row['foto'] : 'default.png';
-                                        $fotoPath = FCPATH . 'uploads/foto/' . $foto;
-                                        if (!file_exists($fotoPath) || empty($row['foto'])) {
-                                            $foto = 'default.png';
-                                        }
-                                        ?>
-                                        <img src="<?= base_url('uploads/foto/' . $foto); ?>" alt="Foto" width="50">
-                                    </td>
-                                    <td><?= $row['nama']; ?></td>
-
-                                    <td><?= $row['alamat']; ?></td>
-                                    <td><?= $row['jabatan']; ?></td>
-                                    <td><?= $row['email']; ?></td>
-                                    <td><?= $row['no_telp']; ?></td>
-                                    <td>
-                                        <span class="badge bg-<?= $row['status_anggota'] === 'aktif' ? 'success' : ($row['status_anggota'] === 'cuti' ? 'warning' : 'secondary') ?>">
-                                            <?= ucfirst($row['status_anggota'] ?? 'Tidak Diketahui') ?>
-                                        </span>
-                                    </td>
-                                    <td>
-                                        <a href="<?= base_url('/anggota/tambah/' . $row['id_anggota']); ?>" class="btn btn-sm btn-info">Edit</a>
-                                    </td>
+                                    <th>No.</th>
+                                    <th>Foto</th>
+                                    <th>Nama</th>
+                                    <th>Alamat</th>
+                                    <th>Jabatan</th>
+                                    <th>Email</th>
+                                    <th>No. Telp</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
                                 </tr>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                <?php $no = 1;
+                                foreach ($anggota as $row) : ?>
+                                    <tr>
+                                        <td><?= $no++; ?></td>
+                                        <td>
+                                            <?php
+                                            $foto = !empty($row['foto']) ? $row['foto'] : 'default.png';
+                                            $fotoPath = FCPATH . 'uploads/foto/' . $foto;
+                                            if (!file_exists($fotoPath) || empty($row['foto'])) {
+                                                $foto = 'default.png';
+                                            }
+                                            ?>
+                                            <img src="<?= base_url('uploads/foto/' . $foto); ?>" alt="Foto" width="50">
+                                        </td>
+                                        <td><?= $row['nama']; ?></td>
+
+                                        <td><?= $row['alamat']; ?></td>
+                                        <td><?= $row['jabatan']; ?></td>
+                                        <td><?= $row['email']; ?></td>
+                                        <td><?= $row['no_telp']; ?></td>
+                                        <td>
+                                            <?php
+                                            $status = strtolower(trim($row['status_anggota'] ?? ''));
+                                            $badge = 'secondary';
+                                            if ($status === 'aktif') {
+                                                $badge = 'success';
+                                            } elseif ($status === 'cuti') {
+                                                $badge = 'danger';
+                                            } elseif ($status === 'tidak aktif') {
+                                                $badge = 'secondary';
+                                            }
+                                            ?>
+                                            <span class="badge bg-<?= $badge ?>">
+                                                <?= ucwords($status) ?: 'Tidak Diketahui' ?>
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <a href="<?= base_url('anggota/edit/' . $row['id_anggota']); ?>" class="btn btn-sm btn-info">Edit</a>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
     </main>
 </div>
 

@@ -99,6 +99,8 @@ class LoginController extends BaseController
                     'id_anggota'    => $dataAnggota['id_anggota'],
                     'nama'          => $dataAnggota['nama'],
                     'email'         => $dataAnggota['email'],
+                    'foto'          => $dataAnggota['foto'],
+                    'jabatan'      => $dataAnggota['jabatan'],
                     'role'          => 'anggota',
                     'logged_in'     => true
                 ]);

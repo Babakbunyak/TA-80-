@@ -1,4 +1,6 @@
 <?php
+// Route untuk list data pengguna
+$routes->get('pengguna', 'PenggunaController::index');
 
 use CodeIgniter\Router\RouteCollection;
 
@@ -41,6 +43,8 @@ $routes->get('anggota/hapus/(:num)', 'Admin\AnggotaController::hapus/$1');
 //Upload Berita
 $routes->get('admin/upload_berita', 'Admin\UpberitaController::uploadberita');
 $routes->post('admin/upload_berita/upload', 'Admin\UpberitaController::upload');
+$routes->get('upber/tambah', 'Admin\UpberitaController::tambah');
+$routes->get('upber/tambah/(:num)', 'Admin\UpberitaController::tambah/$1');
 $routes->get('upber', 'Admin\UpberitaController::uploadberita');
 $routes->post('upload_berita/upload', 'Admin\UpberitaController::upload');
 $routes->get('admin/berita/detail/(:num)', 'Admin\UpberitaController::detail/$1');
@@ -79,12 +83,20 @@ $routes->get('Berita2/berita2(:num)', 'Berita2Controller::detail/$1');
 // route tampilan berita 3
 $routes->get('Berita3', 'Berita3Controller::berita3');
 
+
+// Route detail aspirasi
+$routes->get('laporan/detail/(:num)', 'Admin\DatasatuvisiController::detail/$1');
+$routes->post('admin/dashboard/data/updatestatus/(:num)', 'Admin\DatasatuvisiController2::updatestatus/$1');
+$routes->post('admin/dashboard/data_satuvisi/updatestatus/(:num)', 'Admin\DatasatuvisiController::updatestatus/$1');
+
 // route laporan
 $routes->get('/laporan', 'LaporanController::laporan');
 $routes->post('laporan/kirimLaporan', 'LaporanController::kirimLaporan');
 $routes->post('laporan/kirimAspirasi', 'LaporanController::kirimAspirasi');
 
 
+// Route detail pengguna
+$routes->get('pengguna/detail/(:num)', 'PenggunaController::detail/$1');
 $routes->get('/profil', 'ProfilController::index');
 $routes->post('/profil/update', 'ProfilController::updateProfile');
 $routes->post('/profil/password', 'ProfilController::changePassword');
