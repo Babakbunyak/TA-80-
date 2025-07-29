@@ -1,0 +1,427 @@
+DEBUG - 2025-07-29 02:45:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 03:59:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "users/beranda/index.php"
+[Method: GET, Route: /]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('users/beranda/index.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('users/beranda/index', [], true)
+ 3 APPPATH\Controllers\BerandaController.php(19): view('users/beranda/index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BerandaController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BerandaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 04:01:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 04:05:52 --> ErrorException: include(C:\Users\Riz\Desktop\TA_kami - Copy\vendor\composer/../../app/Controllers/Berita1Controller.php): Failed to open stream: No such file or directory
+[Method: GET, Route: berita/detail/1]
+in VENDORPATH\composer\ClassLoader.php on line 576.
+ 1 VENDORPATH\composer\ClassLoader.php(576): CodeIgniter\Debug\Exceptions->errorHandler(2, 'include(C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\vendor\\composer/../../app/Controllers/Berita1Controller.php): Failed to open stream: No such file or directory', 'C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\vendor\\composer\\ClassLoader.php', 576)
+ 2 VENDORPATH\composer\ClassLoader.php(576): include()
+ 3 VENDORPATH\composer\ClassLoader.php(427): Composer\Autoload\{closure}('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\vendor\\composer/../../app/Controllers/Berita1Controller.php')
+ 4 [internal function]: Composer\Autoload\ClassLoader->loadClass('App\\Controllers\\Berita1Controller')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Berita1Controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 04:07:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 04:08:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 07:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 07:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 07:40:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 07:42:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 07:50:18 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "register/template.php"
+[Method: GET, Route: auth/register/verifyinfo]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('register/template.php')
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('register/template', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('auth/register/verifyinfo', [], true)
+ 4 APPPATH\Controllers\RegisterController.php(111): view('auth/register/verifyinfo')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\RegisterController->verifyinfo()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\RegisterController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 07:52:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 07:52:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 07:52:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 07:52:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 07:58:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 08:00:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 08:01:33 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 08:05:09 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 08:05:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 08:08:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 08:22:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "Laporan/laporan.php"
+[Method: GET, Route: laporan]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Laporan/laporan.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('Laporan/laporan', [], true)
+ 3 APPPATH\Controllers\LaporanController.php(13): view('Laporan/laporan')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\LaporanController->laporan()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 08:30:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:31:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:31:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:32:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:32:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:32:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 08:32:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "profil_user/profil-pengguna.php"
+[Method: GET, Route: profil]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('profil_user/profil-pengguna.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('profil_user/profil-pengguna', [], true)
+ 3 APPPATH\Controllers\ProfilController.php(13): view('profil_user/profil-pengguna', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ProfilController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProfilController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 08:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:38:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:43:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:47:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:47:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:47:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 08:56:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "berita/berita1.php"
+[Method: GET, Route: berita/detail-berita/1]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('berita/berita1.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('berita/berita1', [], true)
+ 3 APPPATH\Controllers\BeritaController.php(74): view('berita/berita1', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\BeritaController->detail('1')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\BeritaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 08:58:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:58:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 08:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:01:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 09:01:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/data/pdf_laporan.php"
+[Method: GET, Route: admin/dashboard/data/printpdf]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/data/pdf_laporan.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/data/pdf_laporan', [], true)
+ 3 APPPATH\Controllers\Admin\LaporanController.php(84): view('admin/dashboard/data/pdf_laporan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\LaporanController->printpdf()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:02:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "pengguna/laporan/pdf_laporan.php"
+[Method: GET, Route: admin/dashboard/data/printpdf]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('pengguna/laporan/pdf_laporan.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('pengguna/laporan/pdf_laporan', [], true)
+ 3 APPPATH\Controllers\Admin\LaporanController.php(84): view('pengguna/laporan/pdf_laporan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\LaporanController->printpdf()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:04:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/pengguna/laporan/pdf_laporan.php"
+[Method: GET, Route: admin/dashboard/data/printpdf]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/pengguna/laporan/pdf_laporan.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/pengguna/laporan/pdf_laporan', [], true)
+ 3 APPPATH\Controllers\Admin\LaporanController.php(84): view('admin/pengguna/laporan/pdf_laporan', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\LaporanController->printpdf()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:04:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/data/detail.php"
+[Method: GET, Route: admin/dashboard/data/detail/7]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/data/detail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/data/detail', [], true)
+ 3 APPPATH\Controllers\Admin\LaporanController.php(40): view('admin/dashboard/data/detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\LaporanController->detail('7')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:05:56 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/data/detail.php"
+[Method: GET, Route: admin/dashboard/data/detail/7]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/data/detail.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/data/detail', [], true)
+ 3 APPPATH\Controllers\Admin\LaporanController.php(40): view('admin/dashboard/data/detail', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\LaporanController->detail('7')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\LaporanController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 09:19:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:20:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:23:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:24:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:24:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:25:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 09:27:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin\dashboard\data_satuvisi\index.php"
+[Method: GET, Route: data-aspirasi]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin\\dashboard\\data_satuvisi\\index.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin\\dashboard\\data_satuvisi\\index', [], true)
+ 3 APPPATH\Controllers\Admin\AspirasiController.php(20): view('admin\\dashboard\\data_satuvisi\\index', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AspirasiController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AspirasiController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 09:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 09:37:55 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/upload-doc/upload-doclist.php"
+[Method: GET, Route: listdoc]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/upload-doc/upload-doclist.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/upload-doc/upload-doclist', [], true)
+ 3 APPPATH\Controllers\Admin\UpdocController.php(22): view('admin/dashboard/upload-doc/upload-doclist', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UpdocController->listdoc()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UpdocController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:40:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/upload-doc/upload-doclist.php"
+[Method: GET, Route: listdoc]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/upload-doc/upload-doclist.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/upload-doc/upload-doclist', [], true)
+ 3 APPPATH\Controllers\Admin\UpdocController.php(22): view('admin/dashboard/upload-doc/upload-doclist', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UpdocController->listdoc()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UpdocController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:41:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/dokumentasi/list-dokumentasi.php"
+[Method: GET, Route: listdoc]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/dokumentasi/list-dokumentasi.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/dokumentasi/list-dokumentasi', [], true)
+ 3 APPPATH\Controllers\Admin\UpdocController.php(22): view('admin/dashboard/dokumentasi/list-dokumentasi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UpdocController->listdoc()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UpdocController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:42:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/dokumentasi/list-dokumentasi.php"
+[Method: GET, Route: updoc]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/dokumentasi/list-dokumentasi.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/dokumentasi/list-dokumentasi', [], true)
+ 3 APPPATH\Controllers\Admin\UpdocController.php(15): view('admin/dashboard/dokumentasi/list-dokumentasi', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UpdocController->uploaddoc()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UpdocController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 09:43:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 09:44:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 09:44:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/anggota/anggota.php"
+[Method: GET, Route: anggota]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/anggota/anggota.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/anggota/anggota', [], true)
+ 3 APPPATH\Controllers\Admin\AnggotaController.php(14): view('admin/dashboard/anggota/anggota', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AnggotaController->anggota()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AnggotaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:45:15 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/anggota/tambah.php"
+[Method: GET, Route: anggota/tambah]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/anggota/tambah.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/anggota/tambah', [], true)
+ 3 APPPATH\Controllers\Admin\AnggotaController.php(19): view('admin/dashboard/anggota/tambah')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AnggotaController->tambah()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AnggotaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 09:46:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 09:46:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/anggota/tambah.php"
+[Method: GET, Route: anggota/edit/25]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/anggota/tambah.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/anggota/tambah', [], true)
+ 3 APPPATH\Controllers\Admin\AnggotaController.php(71): view('admin/dashboard/anggota/tambah', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AnggotaController->edit('25')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AnggotaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:47:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/anggota/form-tambah.php"
+[Method: GET, Route: anggota/edit/25]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/anggota/form-tambah.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/anggota/form-tambah', [], true)
+ 3 APPPATH\Controllers\Admin\AnggotaController.php(71): view('admin/dashboard/anggota/form-tambah', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AnggotaController->edit('25')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AnggotaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+CRITICAL - 2025-07-29 09:47:19 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/anggota/form-tambah.php"
+[Method: GET, Route: anggota/edit/25]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/anggota/form-tambah.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/anggota/form-tambah', [], true)
+ 3 APPPATH\Controllers\Admin\AnggotaController.php(71): view('admin/dashboard/anggota/form-tambah', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\AnggotaController->edit('25')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\AnggotaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 09:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-29 09:54:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "admin/dashboard/upload_berita/uploadberita.php"
+[Method: GET, Route: admin/berita]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(214): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('admin/dashboard/upload_berita/uploadberita.php')
+ 2 SYSTEMPATH\Common.php(1167): CodeIgniter\View\View->render('admin/dashboard/upload_berita/uploadberita', [], true)
+ 3 APPPATH\Controllers\Admin\UpberitaController.php(17): view('admin/dashboard/upload_berita/uploadberita', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin\UpberitaController->listberita()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin\UpberitaController))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+10 SYSTEMPATH\rewrite.php(44): require_once('C:\\Users\\Riz\\Desktop\\TA_kami - Copy\\public\\index.php')
+DEBUG - 2025-07-29 10:01:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 10:01:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-29 10:06:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
