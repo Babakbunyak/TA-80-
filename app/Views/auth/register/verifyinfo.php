@@ -1,4 +1,4 @@
-<?= $this->extend('register/template') ?>
+<?= $this->extend('auth/register/template') ?>
 <?= $this->section('content') ?>
 <div class="container mt-5">
   <div class="alert alert-info">Silakan cek email Anda untuk kode verifikasi akun.</div>

@@ -15,8 +15,8 @@
                 </a>
                 <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="<?= base_url('data'); ?>">Data Laporan</a>
-                        <a class="nav-link" href="<?= base_url('data_satuvisi'); ?>">Data Aspirasi</a>
+                        <a class="nav-link" href="<?= base_url('data-laporan'); ?>">Data Laporan</a>
+                        <a class="nav-link" href="<?= base_url('data-aspirasi'); ?>">Data Aspirasi</a>
                     </nav>
                 </div>
 
@@ -28,7 +28,7 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                     Data Pengguna
                 </a>
-                <a class="nav-link" href="<?= base_url('upber'); ?>">
+                <a class="nav-link" href="<?= base_url('/admin/berita'); ?>">
                     <div class="sb-nav-link-icon"><i class="bi bi-newspaper"></i></div>
                     Uploud Berita
                 </a>

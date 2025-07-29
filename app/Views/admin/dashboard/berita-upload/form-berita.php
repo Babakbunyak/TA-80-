@@ -26,7 +26,7 @@
 
       <div class="card mb-4">
         <div class="card-body">
-          <form action="<?= base_url('admin/upload_berita/upload') ?>" method="post" enctype="multipart/form-data">
+          <form action="<?= base_url('/admin/upload_berita/upload') ?>" method="post" enctype="multipart/form-data">
             <?= csrf_field(); ?>
             <div class="mb-3">
               <label for="judul" class="form-label">Judul</label>

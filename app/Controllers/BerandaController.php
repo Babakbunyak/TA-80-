@@ -16,13 +16,13 @@ class BerandaController extends BaseController
 
         $data['dokumentasi'] = $dokumentasiModel->getDokumentasiTerbaru(3);
         $data['berita'] = $beritaModel->getBeritaTerbaru(3);
-        return view('users/beranda/index', $data);
+        return view('users/beranda/beranda', $data);
     }
 
-    public function detail($id)
+    public function berita($id)
     {
         $model = new BeritaModel();
         $data['berita'] = $model->find($id);
-        return view('berita/detail', $data);
+        return view('berita/berita-detail', $data);
     }
 }

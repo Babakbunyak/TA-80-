@@ -6,9 +6,9 @@ use App\Controllers\BaseController;
 use CodeIgniter\HTTP\ResponseInterface;
 use App\Models\DokumentasiModel;
 
-class Berita2Controller extends BaseController
+class DokumentasiController extends BaseController
 {
-    public function berita2()
+    public function dokumentasi()
     {
         $model = new DokumentasiModel();
         $data['dokumentasi'] = $model->getDokumentasiTerbaru(3);
@@ -19,6 +19,6 @@ class Berita2Controller extends BaseController
     {
         $model = new DokumentasiModel();
         $data['dokumentasi'] = $model->find($id);
-        return view('berita2/berita2', $data);
+        return view('dokumentasi/detail-dokumentasi', $data);
     }
 }

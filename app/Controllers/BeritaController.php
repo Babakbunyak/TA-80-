@@ -5,18 +5,18 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\BeritaModel;
 
-class Berita1Controller extends BaseController
+class BeritaController extends BaseController
 {
     public function index()
     {
         $data = ['title' => 'Upload Berita'];
-        return view('berita/berita1', $data);
+        return view('berita/list-berita', $data);
     }
 
-    public function uploadberita()
+    public function tambah()
     {
-        $data = ['title' => 'Upload Berita'];
-        return view('admin/dashboard/upload_berita/uploadberita', $data);
+        $data = ['title' => 'tambah Berita'];
+        return view('admin/dashboard/berita-upload/form-berita', $data);
     }
 
     public function upload()
@@ -71,6 +71,6 @@ class Berita1Controller extends BaseController
             'title' => 'Detail Berita',
             'berita' => $berita
         ];
-        return view('berita/berita1', $data);
+        return view('berita/berita_detail', $data);
     }
 }

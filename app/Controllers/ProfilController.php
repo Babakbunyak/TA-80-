@@ -10,7 +10,7 @@ class ProfilController extends BaseController
     {
         $model = new PenggunaModel();
         $data['pengguna'] = $model->find(session()->get('id_pengguna'));
-        return view('profil_user/profil', $data);
+        return view('users/profil_user/profil-pengguna', $data);
     }
 
     public function updateProfile()
@@ -19,7 +19,7 @@ class ProfilController extends BaseController
         $email = $this->request->getPost('email');
         $id = session()->get('id_pengguna');
         if (!$id) {
-            return redirect()->to('/profil')->with('error', 'User tidak ditemukan.');
+            return redirect()->to('/profil-pengguna')->with('error', 'User tidak ditemukan.');
         }
         $model = new PenggunaModel();
         $model->update($id, [
@@ -29,7 +29,7 @@ class ProfilController extends BaseController
         // Update session jika perlu
         session()->set('nama', $nama);
         session()->set('email', $email);
-        return redirect()->to('/profil')->with('success', 'Profil berhasil diperbarui.');
+        return redirect()->to('/profil-pengguna')->with('success', 'Profil berhasil diperbarui.');
     }
 
     public function changePassword()
@@ -40,11 +40,11 @@ class ProfilController extends BaseController
 
         // Validasi sederhana
         if ($new !== $confirm) {
-            return redirect()->to('/profil')->with('error', 'Password baru tidak cocok.');
+            return redirect()->to('/profil-pengguna')->with('error', 'Password baru tidak cocok.');
         }
 
         // Lanjutkan update password...
 
-        return redirect()->to('/profil')->with('success', 'Password berhasil diubah.');
+        return redirect()->to('/profil-pengguna')->with('success', 'Password berhasil diubah.');
     }
 }

@@ -11,13 +11,13 @@ class PenggunaController extends BaseController
   {
     $model = new PenggunaModel();
     $data['pengguna'] = $model->findAll();
-    return view('admin/dashboard/pengguna/index', $data);
+    return view('admin/dashboard/pengguna/list-pengguna', $data);
   }
 
   public function detail($id)
   {
     $model = new PenggunaModel();
     $data['pengguna'] = $model->find($id);
-    return view('admin/dashboard/pengguna/detail', $data);
+    return view('admin/dashboard/pengguna/detail-pengguna', $data);
   }
 }

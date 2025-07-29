@@ -10,7 +10,7 @@ class RegisterController extends BaseController
 {
     public function register()
     {
-        return view('register/register');
+        return view('auth/register/register');
     }
 
     public function proses()
@@ -101,14 +101,14 @@ class RegisterController extends BaseController
 
         // Simpan email ke session untuk proses verifikasi
         session()->set('email_verifikasi', $email);
-        return redirect()->to('/register/verifyinfo');
+        return redirect()->to('/auth/register/verifyinfo');
     }
 
 
     public function verifyinfo()
     {
         // Tampilkan form input kode verifikasi
-        return view('register/verifyinfo');
+        return view('auth/register/verifyinfo');
     }
 
     public function verify()
@@ -124,9 +124,9 @@ class RegisterController extends BaseController
             $model->save($data);
             session()->remove('pending_register');
             session()->remove('email_verifikasi');
-            return view('register/verify_success');
+            return view('auth/register/verify_success');
         } else {
-            return view('register/verify_failed');
+            return view('auth/register/verify_failed');
         }
     }
 }

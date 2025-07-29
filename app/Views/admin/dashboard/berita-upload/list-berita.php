@@ -7,7 +7,7 @@
     <main>
         <div class="container-fluid px-4">
             <h1 class="mt-4 mb-3">Berita</h1>
-            <button type="button" class="btn btn-success mb-2" onclick="location.href='<?= base_url('upber/tambah'); ?>'">Tambah</button>
+            <button type="button" class="btn btn-success mb-2" onclick="location.href='<?= base_url('admin/berita/tambah'); ?>'">Tambah</button>
 
             <div class="card mt-3 mb-3">
                 <div class="card-body">

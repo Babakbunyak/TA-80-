@@ -8,7 +8,7 @@ use App\Models\SatuvisiModel;
 use App\Models\LaporanModel;
 
 
-class DatasatuvisiController extends BaseController
+class AspirasiController extends BaseController
 {
     public function index()
     {
@@ -17,7 +17,7 @@ class DatasatuvisiController extends BaseController
         ];
         $model = new LaporanModel();
         $data['laporan'] = $model->where('jenis', 'aspirasi')->findAll();
-        return view('admin\dashboard\data_satuvisi\index', $data);
+        return view('admin\dashboard\pengguna\aspirasi\detail-aspirasi', $data);
     }
 
     public function detail($id_laporan)
@@ -35,9 +35,9 @@ class DatasatuvisiController extends BaseController
                 }
             }
             $aspirasi['nama_pengguna'] = $nama_pengguna;
-            return view('admin/dashboard/data_satuvisi/detail', ['aspirasi' => $aspirasi]);
+            return view('admin\dashboard\pengguna\aspirasi\detail-aspirasi', ['aspirasi' => $aspirasi]);
         } else {
-            return view('admin/dashboard/data_satuvisi/detail', ['aspirasi' => null]);
+            return view('admin\dashboard\pengguna\aspirasi\detail-aspirasi', ['aspirasi' => null]);
         }
     }
 

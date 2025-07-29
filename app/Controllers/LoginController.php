@@ -76,7 +76,7 @@ class LoginController extends BaseController
                     'logged_in'     => true
                 ]);
 
-                return redirect()->to('/laporan/laporan');
+                return redirect()->to('laporan/laporan');
             } else {
                 return redirect()->back()->with('error', 'Email atau password salah!');
             }
@@ -84,14 +84,6 @@ class LoginController extends BaseController
 
         // Cek di tabel anggota jika tidak ditemukan di pengguna
         $dataAnggota = $anggotaModel->where('email', $email)->first();
-        //if ($dataAnggota) {
-        //    $pass = $dataAnggota['password'];
-        // Debug:
-        //die('Input: ' . $password . ' | DB: ' . $pass . ' | Verify: ' . (password_verify($password, $pass) ? 'ok' : 'fail'));
-        //    if (password_verify($password, $pass)) {
-        // ...existing code...
-        //   }
-        //}
         if ($dataAnggota) {
             $pass = $dataAnggota['password'];
             if (password_verify($password, $pass)) {

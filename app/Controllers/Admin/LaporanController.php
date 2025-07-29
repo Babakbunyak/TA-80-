@@ -11,16 +11,16 @@ use Dompdf\Dompdf;
 require_once(ROOTPATH . 'vendor/autoload.php');
 
 
-class DatasatuvisiController2 extends BaseController
+class LaporanController extends BaseController
 {
-    public function index2()
+    public function laporan()
     {
         $data = [
             'title' => 'Data Laporan',
         ];
         $model = new LaporanModel();
         $data['laporan'] = $model->where('jenis', 'laporan')->findAll();
-        return view('admin\dashboard\data\index2', $data);
+        return view('admin\dashboard\pengguna\laporan\list-laporan', $data);
     }
     public function detail($id)
     {
@@ -37,9 +37,9 @@ class DatasatuvisiController2 extends BaseController
                 }
             }
             $laporan['nama_pengguna'] = $nama_pengguna;
-            return view('admin/dashboard/data/detail', ['laporan' => $laporan]);
+            return view('admin/dashboard/pengguna/laporan/detail-laporan', ['laporan' => $laporan]);
         } else {
-            return view('admin/dashboard/data/detail', ['laporan' => null]);
+            return view('admin/dashboard/pengguna/laporan/detail-laporan', ['laporan' => null]);
         }
     }
     public function updatestatus($id_laporan)
@@ -64,7 +64,7 @@ class DatasatuvisiController2 extends BaseController
         $laporan = $model->find($id_laporan);
         if ($laporan) {
             $model->delete($id_laporan);
-            return redirect()->to(base_url('admin/dashboard/data/index2'))->with('sukses', 'Laporan berhasil dihapus!');
+            return redirect()->to(base_url('admin/dashboard/pengguna/laporan/detail-laporan'))->with('sukses', 'Laporan berhasil dihapus!');
         } else {
             return redirect()->back()->with('error', 'Data laporan tidak ditemukan!');
         }
@@ -81,7 +81,7 @@ class DatasatuvisiController2 extends BaseController
         } else {
             $data['laporan'] = $model->where('jenis', 'laporan')->findAll();
         }
-        $html = view('admin/dashboard/data/pdf_laporan', $data);
+        $html = view('admin/dashboard/pengguna/laporan/pdf_laporan', $data);
         $dompdf = new \Dompdf\Dompdf();
         $dompdf->loadHtml($html);
         $dompdf->setPaper('A4', 'landscape');

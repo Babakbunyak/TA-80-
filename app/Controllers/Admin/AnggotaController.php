@@ -11,12 +11,12 @@ class AnggotaController extends BaseController
     {
         $model = new AnggotaModel();
         $data['anggota'] = $model->findAll();
-        return view('admin/dashboard/anggota/anggota', $data);
+        return view('admin/dashboard/anggota/list-anggota', $data);
     }
 
     public function tambah()
     {
-        return view('admin/dashboard/anggota/tambah');
+        return view('admin/dashboard/anggota/form-anggota');
     }
 
     public function simpan()
@@ -68,7 +68,7 @@ class AnggotaController extends BaseController
     {
         $model = new AnggotaModel();
         $data['anggota'] = $model->find($id);
-        return view('admin/dashboard/anggota/tambah', $data);
+        return view('admin/dashboard/anggota/form-anggota', $data);
     }
 
     public function update($id)

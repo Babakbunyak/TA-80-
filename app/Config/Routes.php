@@ -11,29 +11,25 @@ use CodeIgniter\Router\RouteCollection;
 // test database
 $routes->get('/test', 'Home::index');
 
-// route user sudah login
-$routes->get('user_login', 'SudahLoginController::sudah_login');
 // route beranda
 $routes->get('/', 'BerandaController::index');
 
 // route admin dashboard
 $routes->get('dashboard', 'Admin\DashboardController::index');
 
-// route admin data_satuvisi(data aspirasi)
-$routes->get('data_satuvisi', 'Admin\DatasatuvisiController::index');
+// route admin data aspirasi
+$routes->get('data-aspirasi', 'Admin\AspirasiController::index');
 
 // route admin data(data laporan)
-$routes->get('data', 'Admin\DatasatuvisiController2::index2');
-$routes->get('admin/dashboard/data/index2', 'Admin\DatasatuvisiController2::index2');
-$routes->post('laporan/hapus/(:num)', 'Admin\DatasatuvisiController2::hapus/$1');
-$routes->get('admin/dashboard/data/detail/(:num)', 'Admin\DatasatuvisiController2::detail/$1');
-$routes->get('admin/dashboard/data/printpdf', 'Admin\DatasatuvisiController2::printpdf');
-$routes->get('admin/dashboard/data/printpdf/(:num)', 'Admin\DatasatuvisiController2::printpdf/$1');
+$routes->get('data-laporan', 'Admin\LaporanController::laporan');
+$routes->get('admin/dashboard/data/laporan', 'Admin\LaporanController::laporan');
+$routes->post('laporan/hapus/(:num)', 'Admin\LaporanController::hapus/$1');
+$routes->get('admin/dashboard/data/detail/(:num)', 'Admin\LaporanController::detail/$1');
+$routes->get('admin/dashboard/data/printpdf', 'Admin\LaporanController::printpdf');
+$routes->get('admin/dashboard/data/printpdf/(:num)', 'Admin\LaporanController::printpdf/$1');
 
 //Anggota
 $routes->get('anggota', 'Admin\AnggotaController::anggota');
-$routes->get('admin/anggota', 'Admin\AnggotaController::anggota');
-$routes->get('admin/dashboard/anggota/anggota', 'Admin\AnggotaController::anggota');
 $routes->get('anggota/tambah', 'Admin\AnggotaController::tambah');
 $routes->post('anggota/simpan', 'Admin\AnggotaController::simpan');
 $routes->get('anggota/edit/(:num)', 'Admin\AnggotaController::edit/$1');
@@ -41,11 +37,11 @@ $routes->post('anggota/update/(:num)', 'Admin\AnggotaController::update/$1');
 $routes->get('anggota/hapus/(:num)', 'Admin\AnggotaController::hapus/$1');
 
 //Upload Berita
-$routes->get('admin/upload_berita', 'Admin\UpberitaController::uploadberita');
-$routes->post('admin/upload_berita/upload', 'Admin\UpberitaController::upload');
-$routes->get('upber/tambah', 'Admin\UpberitaController::tambah');
-$routes->get('upber/tambah/(:num)', 'Admin\UpberitaController::tambah/$1');
-$routes->get('upber', 'Admin\UpberitaController::uploadberita');
+//$routes->get('/admin/berita', 'Admin\UpberitaController::listberita');
+$routes->post('/admin/upload', 'Admin\UpberitaController::upload');
+$routes->get('/admin/berita/tambah', 'Admin\UpberitaController::edit');
+$routes->get('/admin/berita/tambah/(:num)', 'Admin\UpberitaController::edit/$1');
+$routes->get('/admin/berita', 'Admin\UpberitaController::listberita');
 $routes->post('upload_berita/upload', 'Admin\UpberitaController::upload');
 $routes->get('admin/berita/detail/(:num)', 'Admin\UpberitaController::detail/$1');
 
@@ -68,35 +64,32 @@ $routes->get('laporan/laporan', 'LaporanController::laporan');
 
 $routes->get('register', 'RegisterController::register');
 $routes->post('register/proses', 'RegisterController::proses');
-$routes->get('register/verifyinfo', 'RegisterController::verifyinfo');
+$routes->get('auth/register/verifyinfo', 'RegisterController::verifyinfo');
 $routes->post('register/verify', 'RegisterController::verify');
 
 // route tampilan berita
-$routes->get('berita', 'Berita1Controller::berita1');
-$routes->get('berita/detail/(:num)', 'Berita1Controller::detail/$1');
-$routes->get('berita1', 'Berita1Controller::index');
+$routes->get('berita', 'BeritaController::berita');
+$routes->get('berita/detail-berita/(:num)', 'BeritaController::detail/$1');
+$routes->get('berita', 'BeritaController::index');
 
 // route tampilan dokumentasi
 $routes->get('Berita2', 'Berita2Controller::berita2');
 $routes->get('Berita2/berita2(:num)', 'Berita2Controller::detail/$1');
 
-// route tampilan berita 3
-$routes->get('Berita3', 'Berita3Controller::berita3');
-
 
 // Route detail aspirasi
 $routes->get('laporan/detail/(:num)', 'Admin\DatasatuvisiController::detail/$1');
-$routes->post('admin/dashboard/data/updatestatus/(:num)', 'Admin\DatasatuvisiController2::updatestatus/$1');
+$routes->post('admin/dashboard/data/updatestatus/(:num)', 'Admin\LaporanController::updatestatus/$1');
 $routes->post('admin/dashboard/data_satuvisi/updatestatus/(:num)', 'Admin\DatasatuvisiController::updatestatus/$1');
 
 // route laporan
-$routes->get('/laporan', 'LaporanController::laporan');
+$routes->get('laporan', 'LaporanController::laporan');
 $routes->post('laporan/kirimLaporan', 'LaporanController::kirimLaporan');
 $routes->post('laporan/kirimAspirasi', 'LaporanController::kirimAspirasi');
 
 
 // Route detail pengguna
 $routes->get('pengguna/detail/(:num)', 'PenggunaController::detail/$1');
-$routes->get('/profil', 'ProfilController::index');
+$routes->get('/profil-pengguna', 'ProfilController::index');
 $routes->post('/profil/update', 'ProfilController::updateProfile');
 $routes->post('/profil/password', 'ProfilController::changePassword');

@@ -12,14 +12,14 @@ class UpdocController extends BaseController
         $data = [
             'title' => 'Upload Dokumentasi'
         ];
-        return view('admin/dashboard/upload-doc/uploaddoc', $data);
+        return view('admin/dashboard/dokumentasi-upload/form-dokumentasi', $data);
     }
 
     public function listdoc()
     {
         $model = new DokumentasiModel();
         $data['dokumentasi'] = $model->findAll();
-        return view('admin/dashboard/upload-doc/upload-doclist', $data);
+        return view('admin/dashboard/dokumentasi-upload/list-dokumentasi', $data);
     }
 
     public function upload()

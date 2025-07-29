@@ -10,7 +10,7 @@ class LaporanController extends BaseController
 {
     public function laporan()
     {
-        return view('Laporan/laporan'); // pastikan file view ini ada di /app/Views/Laporan/laporan.php
+        return view('users/laporan-aspirasi/form-laporan'); // pastikan file view ini ada di /app/Views/Laporan/laporan.php
     }
 
     public function kirimAspirasi()

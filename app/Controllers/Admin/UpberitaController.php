@@ -7,27 +7,14 @@ use App\Models\BeritaModel;
 
 class UpberitaController extends BaseController
 {
-    public function tambah($id = null)
-    {
-        $beritaModel = new BeritaModel();
-        $berita = null;
-        if ($id) {
-            $berita = $beritaModel->find($id);
-        }
-        $data = [
-            'title' => $id ? 'Edit Berita' : 'Tambah Berita',
-            'berita' => $berita
-        ];
-        return view('admin/dashboard/upload_berita/formberita', $data);
-    }
-    public function uploadberita()
+    public function listberita()
     {
         $beritaModel = new BeritaModel();
         $data = [
             'title' => 'Upload Berita',
             'berita' => $beritaModel->findAll()
         ];
-        return view('admin/dashboard/upload_berita/uploadberita', $data);
+        return view('admin/dashboard/berita-upload/list-berita', $data);
     }
 
     public function upload()
@@ -63,7 +50,19 @@ class UpberitaController extends BaseController
             return redirect()->back()->with('error', 'Gambar tidak valid!');
         }
     }
-
+    public function edit($id = null)
+    {
+        $beritaModel = new BeritaModel();
+        $berita = null;
+        if ($id) {
+            $berita = $beritaModel->find($id);
+        }
+        $data = [
+            'title' => $id ? 'Edit Berita' : 'Tambah Berita',
+            'berita' => $berita
+        ];
+        return view('admin/dashboard/berita-upload/form-berita', $data);
+    }
     public function index()
     {
         $beritaModel = new BeritaModel();
