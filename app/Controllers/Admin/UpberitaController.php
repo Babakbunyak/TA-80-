@@ -42,7 +42,7 @@ class UpberitaController extends BaseController
             ];
 
             if ($beritaModel->insert($data)) {
-                return redirect()->to('/admin/upload_berita')->with('sukses', 'Berita berhasil diupload!');
+                return redirect()->to('/admin/berita')->with('sukses', 'Berita berhasil diupload!');
             } else {
                 return redirect()->back()->with('error', 'Gagal mengupload berita!');
             }
@@ -50,19 +50,28 @@ class UpberitaController extends BaseController
             return redirect()->back()->with('error', 'Gambar tidak valid!');
         }
     }
-    public function edit($id = null)
+    public function edit($id_berita = null)
     {
         $beritaModel = new BeritaModel();
         $berita = null;
-        if ($id) {
-            $berita = $beritaModel->find($id);
+        if ($id_berita) {
+            $berita = $beritaModel->find($id_berita);
         }
         $data = [
-            'title' => $id ? 'Edit Berita' : 'Tambah Berita',
+            'title' => $id_berita ? 'Edit Berita' : 'Tambah Berita',
             'berita' => $berita
         ];
         return view('admin/dashboard/berita-upload/form-berita', $data);
     }
+
+    public function update($id_berita)
+    {
+        $model = new BeritaModel();
+        $data = $this->request->getPost();
+        $model->update($id_berita, $data);
+        return redirect()->to('/admin/dashboard/berita-update/list-berita')->with('sukses', 'Berita berhasil diperbarui!');
+    }
+
     public function index()
     {
         $beritaModel = new BeritaModel();

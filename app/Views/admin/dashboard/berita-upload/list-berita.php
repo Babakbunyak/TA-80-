@@ -38,7 +38,7 @@
                                         </td>
                                         <td><?= esc($row['judul'] ?? '-'); ?></td>
                                         <td>
-                                            <a href="<?= base_url('/upber/tambah/' . $row['id_berita']); ?>" class="btn btn-sm btn-info">Edit</a>
+                                            <a href="<?= base_url('/admin/edit/berita/' . $row['id_berita']); ?>" class="btn btn-sm btn-info">Edit</a>
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

@@ -83,28 +83,30 @@
             <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
                 <div class="carousel-item active">
-                    <img src="<?= base_url('assets'); ?>/img/banner/1.jpg" alt="">
+                    <img src="<?= base_url('assets'); ?>/img/banner/7.jpg" alt="">
                     <div class="carousel-container">
                         <h2>Selamat Datang di Satu Visi</h2>
-                        <p>kami hadir untuk membantu masyarakat di dalam semangat dan kerja sama untuk memajukan sumba yang lebih baik.</p>
+                        <p>Selamat datang di Satu Visi, tempat di mana mimpi bertemu aksi, dan suara kecil menjadi kekuatan besar. Kami bukan hanya gerakan, tapi cerita yang terus tumbuh bersama setiap langkahmu. Di sinilah semangat baru dibangun, harapan ditanam, dan masa depan dirangkai bersama. Ayo jadi bagian dari perubahan. Karena di Satu Visi, kamu tidak hanya melihat—kamu ikut menciptakan.
+
+                        </p>
                         <!--<a href="#featured-services" class="btn-get-started">Get Started</a> -->
                     </div>
                 </div><!-- End Carousel Item -->
 
                 <div class="carousel-item">
-                    <img src="<?= base_url('assets'); ?>/img/banner/2.jpg" alt="">
+                    <img src="<?= base_url('assets'); ?>/img/banner/8.jpg" alt="">
                     <div class="carousel-container">
                         <h2>Masyarakat Sumba Yang Sejahterah</h2>
-                        <p>Tana Waikanena Loku Waikala. Di dalam kebersamaan dan kerja keras, menciptakan kemajuan untuk sumba tengah dan masyarakat sumba tengah.</p>
+                        <p>Masyarakat Sumba yang Sejahtera adalah cita-cita yang kami perjuangkan bersama—di mana setiap keluarga hidup layak, anak-anak mendapatkan pendidikan yang layak, dan budaya tetap lestari dalam kemajuan. Kami percaya, dengan kerja nyata dan kolaborasi semua pihak, Sumba bisa bangkit, mandiri, dan menjadi contoh kearifan lokal yang berdampak nasional. Bersama, kita wujudkan harapan ini menjadi kenyataan yang dirasakan oleh semua.</p>
                         <!--<a href="#featured-services" class="btn-get-started">Get Started</a> -->
                     </div>
                 </div><!-- End Carousel Item -->
 
                 <div class="carousel-item">
-                    <img src="<?= base_url('assets'); ?>/img/banner/3.jpg" alt="">
+                    <img src="<?= base_url('assets'); ?>/img/banner/9.jpg" alt="">
                     <div class="carousel-container">
                         <h2>Kami Ada Untuk Membangun Sumba Lebih Baik</h2>
-                        <p>Beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt omnis iste natus error sit voluptatem accusantium.</p>
+                        <p>Kami ada untuk membangun Sumba lebih baik—dengan hati, aksi, dan komitmen. Kami hadir bukan hanya untuk melihat, tapi terlibat langsung dalam setiap proses perubahan. Dari pelosok desa hingga pusat kota, kami bekerja demi pendidikan yang lebih merata, ekonomi yang lebih kuat, dan budaya yang terus hidup. Bersama masyarakat, kami melangkah menuju Sumba yang mandiri, berdaya saing, dan sejahtera untuk generasi masa depan.</p>
                         <!--<a href="#featured-services" class="btn-get-started">Get Started</a> -->
                     </div>
                 </div><!-- End Carousel Item -->
@@ -205,27 +207,19 @@
 
             <div class="container">
                 <div class="row gy-4">
-                    <?php foreach ($dokumentasi as $d) : ?>
-                        <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card h-100 d-flex flex-column align-items-center justify-content-between">
-                                <?php
-                                $fotoPath = FCPATH . 'uploads/dokumentasi/' . $d['image'];
-                                $fotoURL = base_url('uploads/dokumentasi/' . $d['image']);
-                                ?>
-                                <?php if (!empty($d['image']) && file_exists($fotoPath)) : ?>
-                                    <img src="<?= $fotoURL ?>" class="img-fixed-doc" alt="<?= esc($d['judul']) ?>">
-                                <?php else : ?>
-                                    <img src="<?= base_url('assets/img/default-image.jpg') ?>" class="img-fixed-doc" alt="Gambar tidak tersedia">
-                                <?php endif; ?>
-                                <div class="card-body w-100 p-2">
-                                    <h3 class="mt-2 mb-2"><?= esc($d['judul']) ?></h3>
-                                    <a href="<?= base_url('dokumentasi/detail/' . $d['id_dokumentasi']) ?>" class="btn btn-custom btn-sm mt-2">Lihat Detail</a>
-                                </div>
+                    <div class="container my-5">
+                        <div class="custom-container p-4 bg-light rounded position-relative text-center"
+                            style="background-image: url('https://destinasian.co.id/id/wp/wp-content/uploads/Kuda-Sumbawa-05.jpg'); 
+                background-size: cover; 
+                background-position: center; 
+                filter: brightness(0.9);"> <!-- Brightness dikurangi untuk membuat gambar lebih gelap -->
+                            <div class="overlay bg-black position-absolute top-0 start-0 w-100 h-100 opacity-50"></div> <!-- Overlay hitam semi-transparan -->
+                            <div class="content position-relative z-3 text-white">
+                                <p class="large-text">Dokumentasi Kegiatan Satu Visi</p>
+                                <a href="user/list-dokumentasi" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Lihat Dokumentasi</a>
                             </div>
                         </div>
-                    <?php endforeach; ?>
-                </div>
-            </div>
+                    </div>
         </section><!-- /More Services Section -->
 
 
@@ -240,78 +234,134 @@
 
             <!-- Card Sejarah -->
             <div class="container">
-
-                <div class="row g-4">
-                    <!-- Card 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/h.jpg" class="card-img-top" alt="Mesir Kuno">
-                            <div class="card-body">
-                                <h5 class="card-title">Awal Satu Visi Terbentuk</h5>
-                                <p class="card-text">Ide berdirrinyaYSV oleh Saya dengan bapapk Alfonsus Y.Bora. Saat itu kami bekerja di LSM sebagai pendamping Lapangan.
-                                    Waktu itu baru ada 5 LSM di Sumba.
-                                    Dalam perjalanan bekerja sambil belajar di dunia LSM, kami berdua merasa bahwa pelatih-pelatih kami semua adalah orang² dari luar Sumba, yakni dari Jakarta, Denpasar, Mataram dan Kupang. Tidak ada satu orangpun pelatih orang Sumba. Rata2 kami bekeeja sebagai staf pendamping desa. Dalam perjalanan 3-5 tahun kami bekerja di LSM makin kuat keinginan kami untuk mewujudkan keinginan yakni memperbanyak pelatih2 orang Sumba yang memiliki skill yg bagus.
-                                    Hal kedua adalah sangat sedikit perempuan sumba yang bekerja di ruang publik. Rata2 perempuan bekeeja sebagai ibu Rumah Tangga dan paling tinggi menjadi ibu Guru.</p>
-                            </div>
+                <div class="card horizontal-card">
+                    <div class="row g-0 flex-column flex-md-row">
+                        <!-- Gambar -->
+                        <div class="col-12 col-md-4 img-col">
+                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/i.jpg" alt="..." class="img-fluid w-100 h-100 object-fit-cover">
                         </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/2.jpg" class="card-img-top" alt="Kekaisaran Romawi">
-                            <div class="card-body">
-                                <h5 class="card-title">Isu Yang Beredar Di Masa itu</h5>
-                                <p class="card-text">Masalah keterbelakangan perempuan Sumba menjadi.kegundahan saya. Diantaranya perempuan diragukan kemampuannya dalam memimpin. Teebukti pertemuan2 di.level desa hampir tidak ada perwmpuan yg duduk sebagai peserta.pertemuan, apalagi teelibat dalam.pengambilan keputusan. Paling hanya istri kepala desa saja itulun sebagai ketua konsumsi. Jadi perempuan selalu mendapat peran sebagai penyedia konsumsi dipertemuan2 desa. Hal inilah kemudian yg mennjadi dasar berdirinya YSV. Peegumulan mendirikan YSV beejalan 3 tahun lebih. Sambil.belajar di LSM kami terus menempa kemampuan pribadi. Kebwtulan saat itu saya dipercaya menjadi manajer program disalah satu LSM, dan ini sangat langka. Saya merasa peecaya bahwa perwmouan Sumba hanya butuh kesempatan untuk maju.
+                        <!-- Teks -->
+                        <div class="col-12 col-md-8">
+                            <div class="card-body card-body-custom">
+                                <h5 class="card-title card-title-custom">Cerita Singkat</h5>
+                                <p class="card-text">
+                                    Ide berdirinya Yayaysan Satu Visi oleh saya (Ibu Debora R.Kasuatu dengan Bapa Alfonsus Y.Bora). Saat itu kami bekerja di LSM sebagai pendamping Lapangan.
+                                    Saat itu, hanya ada 5 LSM di Sumba.
+                                    Dalam perjalanan bekerja sambil belajar di dunia LSM, kami berdua merasa bahwa pelatih-pelatih kami semua adalah orang² dari luar Sumba, yakni dari Jakarta, Denpasar, Mataram dan Kupang. Tidak ada satu orangpun pelatih dari Sumba. Rata-rata kami bekerja sebagai staf pendamping desa. Dalam perjalanan 3-5 tahun kami bekerja di LSM, terasa semakin kuat keinginan kami untuk mewujudkan keinginan yakni memperbanyak pelatih2 orang Sumba yang memiliki skill yang bagus.
+                                    Hal kedua adalah, sangat sedikit perempuan Sumba yang bekerja di ruang publik. Rata-rata perempuan bekerja sebagai ibu Rumah Tangga dan yang paling tinggi menjadi ibu Guru.
                                 </p>
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Card 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/3.jpg" class="card-img-top" alt="Renaisans">
-                            <div class="card-body">
-                                <h5 class="card-title">Perjuangan dan Kerja Keras</h5>
-                                <p class="card-text">Pada saat berdiri YSV mempunyai 4 staf dan belum ada donor yang mendukung. Kami berdua manfaatkan penghasilan kami yg kecil di LSM lain, mulai menyewa ruangan, amembeli comlutee /PC second serta swadaya memfasilitasimpertwmuan dgn kelompom masyarajat di desa terutama kelompompok perempuan.Hal pertama yg kami.lakukan dgn kelompk.di desa yakni melakukan Asesment kebutuhan masyarakat desa teemasuk kebutuhan kelompok perempuan. setelah 1 tahun berdiri, yakni pada Mei 2006 YSV mendapat kepercayaan dari Pemerintah Provinsi NTT yakni Dinas Penyuluhan Pertanian Terpadu . Yakni YSV menjadi Lembaga Konsultan Program PIDRA (Participatory Integrated Development Rainfid Area/ program Partisipasi Lahan Kering untuk pengembangan ekonomi masyarakat desa dan Ketahanan Langan di 18 Desa di Kabupaten Sumba Barat. Program PIDRA saat itu didukung oleh IFAD</p>
-                            </div>
+            <!-- Card 2 -->
+            <div class="container">
+                <div class="card horizontal-card">
+                    <div class="row g-0 flex-column flex-md-row">
+                        <!-- Gambar -->
+                        <div class="col-12 col-md-4 img-col">
+                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/j.jpg" alt="..." class="img-fluid w-100 h-100 object-fit-cover">
                         </div>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/4.jpg" class="card-img-top" alt="Revolusi Industri">
-                            <div class="card-body">
-                                <h5 class="card-title">IFAD</h5>
-                                <p class="card-text">IFAD adalah singkatan dari International Fund for Agricultural Development, atau dalam bahasa Indonesianya, Dana Internasional untuk Pengembangan Pertanian. IFAD adalah badan khusus Perserikatan Bangsa-Bangsa (PBB) yang berfokus pada pemberantasan kemiskinan dan kelaparan di daerah pedesaan negara-negara berkembang termasuk Indonesia.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 5 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/5.jpg" class="card-img-top" alt="Perang Dunia II">
-                            <div class="card-body">
-                                <h5 class="card-title">Perang Dunia II</h5>
-                                <p class="card-text">Perang Dunia II adalah konflik global yang melibatkan banyak negara dan menyebabkan perubahan politik dan sosial besar-besaran di seluruh dunia.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Card 6 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="card">
-                            <img src="<?= base_url('assets'); ?>/img/banner/6.jpg" class="card-img-top" alt="Pendaratan di Bulan">
-                            <div class="card-body">
-                                <h5 class="card-title">Pendaratan di Bulan</h5>
-                                <p class="card-text">Pada tahun 1969, Neil Armstrong menjadi manusia pertama yang berjalan di Bulan, menandai pencapaian terbesar dalam eksplorasi luar angkasa.</p>
+                        <!-- Teks -->
+                        <div class="col-12 col-md-8">
+                            <div class="card-body card-body-custom">
+                                <h5 class="card-title card-title-custom">Isu Yang Beredar Di Masa itu</h5>
+                                <p class="card-text">
+                                    Masalah keterbelakangan perempuan Sumba menjadi kegundahan saya saat itu. Diantaranya, perempuan diragukan kemampuannya dalam memimpin. Terbukti di dalam pertemuan-pertemuan level desa, hampir tidak ada perempuan yang ikut untuk duduk sebagai peserta pertemuan apalagi terlibat dalam pengambilan keputusan. kalau pun ada,itu hanya istri dari kepala desa saja dan itu pun sebagai ketua konsumsi. Jadi perempuan selalu mendapat peran sebagai penyedia konsumsi dipertemuan-pertemuan desa.
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="container">
+                <div class="card horizontal-card">
+                    <div class="row g-0 flex-column flex-md-row">
+                        <!-- Gambar -->
+                        <div class="col-12 col-md-4 img-col">
+                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/h.jpg" alt="..." class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <!-- Teks -->
+                        <div class="col-12 col-md-8">
+                            <div class="card-body card-body-custom">
+                                <h5 class="card-title card-title-custom">Munculnya Niat Membangun LSM dan Pergumulan Saat Itu</h5>
+                                <p class="card-text">
+                                    Waktu itu, Saya (Ibu Debora R. Kasuatu dan Bapa Alfonsus Y. Bora) mengajak beberapa aktivis-aktivis LSM dan mendiskusikan tentang hal ini. Ternyata, ini membuka pikiran kami saat itu. Hal inilah kemudian yang menjadi dasar berdirinya Yayasan Satu Visi.
+                                    Pergumulan mendirikan Yayasan Satu Visi berjalan sampai 3 tahun lebih. Sambil belajar di LSM, kami terus menempa kemampuan pribadi kami. Kebetulan saat itu saya dipercaya menjadi Manajer Program di salah satu LSM, dan ini sangat langka. Saya merasa percaya bahwa perempuan Sumba hanya butuh kesempatan untuk maju.
+
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="container">
+                <div class="card horizontal-card">
+                    <div class="row g-0 flex-column flex-md-row">
+                        <!-- Gambar -->
+                        <div class="col-12 col-md-4 img-col">
+                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/k.jpg" alt="..." class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <!-- Teks -->
+                        <div class="col-12 col-md-8">
+                            <div class="card-body card-body-custom">
+                                <h5 class="card-title card-title-custom">Berdirinya Yayasan Satu Visi</h5>
+                                <p class="card-text">
+                                    Pada saat Yayasan Satu Visi berdiri pertama kali, kami hanya mempunyai 4 staf dan belum ada donor atau Agensi-agensi yang mendukung kami pada saat itu. Kami berdua memanfaatkan penghasilan kami yg kecil di LSM lain, mulai menyewa ruangan, membeli komputer/PC bekas, serta swadaya yang mem-fasilitasi pertemuan dgn kelompok masyarakat di desa, terutama kelompok perempuan.
+                                    Hal pertama yang kami lakukan dengan kelompk di desa yakni melakukan Asesment kebutuhan masyarakat desa termasuk kebutuhan kelompok perempuan. Dan setelah 1 tahun berdiri, pada Mei 2006, Yayasan Satu Visi mendapatkan kepercayaan dari Pemerintah Provinsi NTT yakni Dinas Penyuluhan Pertanian Terpadu. Yayasan Satu Visi menjadi Lembaga Konsultan Program PIDRA (Participatory Integrated Development Rainfid Area) atau program Partisipasi Lahan Kering untuk pengembangan ekonomi masyarakat desa dan Ketahanan Pangan di 18 Desa di Kabupaten Sumba Barat. Program PIDRA saat itu didukung oleh IFAD.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="container">
+                <div class="card horizontal-card">
+                    <div class="row g-0 flex-column flex-md-row">
+                        <!-- Gambar -->
+                        <div class="col-12 col-md-4 img-col">
+                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/l.jpg" alt="..." class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <!-- Teks -->
+                        <div class="col-12 col-md-8">
+                            <div class="card-body card-body-custom">
+                                <h5 class="card-title card-title-custom">Apa Itu IFAD ?</h5>
+                                <p class="card-text">
+                                    IFAD adalah singkatan dari International Fund for Agricultural Development, atau dalam bahasa Indonesianya, Dana Internasional untuk Pengembangan Pertanian. IFAD adalah badan khusus Perserikatan Bangsa-Bangsa (PBB) yang berfokus pada pemberantasan kemiskinan dan kelaparan di daerah pedesaan negara-negara berkembang termasuk Indonesia.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="container">
+                <div class="card horizontal-card">
+                    <div class="row g-0 flex-column flex-md-row">
+                        <!-- Gambar -->
+                        <div class="col-12 col-md-4 img-col">
+                            <img src="<?= base_url('assets'); ?>/img/dokumentasi satuvisi/m.jpg" alt="..." class="img-fluid w-100 h-100 object-fit-cover">
+                        </div>
+                        <!-- Teks -->
+                        <div class="col-12 col-md-8">
+                            <div class="card-body card-body-custom">
+                                <h5 class="card-title card-title-custom">Keberhasilan Satu Visi Di Dalam Usaha dan Kerja Keras</h5>
+                                <p class="card-text">
+                                    Sampai saat ini, Yayasan Satu Visi telah bekerja sama dengan beberapa donor atau Agensi-agensi serta sudah mendampingi atau memfasitasi hampir 100 desa yang tersebar di Kabupaten Sumba Barat, Sumba Barat Daya, Sumba Tengah dan Sumba Timur.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
             </div>
 
             </div>
@@ -451,10 +501,22 @@
                         <div class="content px-xl-5">
                             <h3><span>Kami hadir untuk </span><strong>Masyarakat</strong></h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                                "Kami hadir bukan sekadar ada, tapi untuk memberi arti bagi masyarakat.
+
+                                Kehadiran kami adalah wujud kepedulian dan pengabdian untuk masyarakat.
+
+                                Kami hadir bukan untuk dilihat, tapi untuk melayani dan membangun bersama masyarakat.
+
+                                Karena setiap langkah kami adalah janji untuk masyarakat yang lebih baik.
+
+                                Kami hadir sebagai harapan, untuk masa depan masyarakat yang lebih sejahtera."
+
+
                             </p>
                         </div>
                     </div>
+
+                    <!-- Kata-Kata Motivasi -->
 
                     <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
 
@@ -462,11 +524,15 @@
                             <div class="faq-item faq-active">
                                 <h3><span class="num"></span> <span>Motivasi Untukmu</span></h3>
                                 <div class="faq-content">
-                                    <p>Jangan menyerah, karena setiap kesulitan</p>
+                                    <p>"Kegagalan bukan akhir, tapi pijakan awal menuju sukses."</p>
+                                    <p>"Setiap hari adalah kesempatan baru untuk tumbuh."</p>
+                                    <p>"Kamu lebih kuat dari apa yang kamu pikirkan."</p>
+                                    <p>"Lakukan dengan hati, hasil akan mengikuti."</p>
+                                    <p>"Jangan takut gagal, takutlah untuk tidak mencoba."</p>
+                                    <p>"Percaya diri bukan sombong, tapi bukti kamu menghargai dirimu."</p>
                                 </div>
                                 <i class="faq-toggle bi bi-chevron-right"></i>
                             </div><!-- End Faq item-->
-
 
                         </div>
 
@@ -483,12 +549,13 @@
                         <div class="card shadow-sm w-100">
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-center">Visi</h3>
-                                <p class="card-text text-center">
-                                    Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
-                                    Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
-                                    Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
-                                    Menjadi perusahaan terkemuka dalam inovasi teknologi yang memberikan dampak positif bagi masyarakat global dengan layanan dan produk yang unggul.
-                                </p>
+                                <ul class="list-group list-group-flush flex-grow-1">
+                                    <li class="list-group-item">Menjadi pelopor perubahan sosial melalui pemberdayaan masyarakat yang adil, inklusif, dan berkelanjutan.</li>
+                                    <li class="list-group-item">Mewujudkan masyarakat yang mandiri, berdaya, dan aktif membangun lingkungan sosial yang lebih baik.</li>
+                                    <li class="list-group-item">Menghadirkan perubahan bermakna bagi kehidupan masyarakat melalui kerja nyata, kolaborasi, dan nilai kemanusiaan.</li>
+                                    <li class="list-group-item">Menjadi yayasan terpercaya dalam membangun kekuatan bersama masyarakat menuju kesejahteraan yang merata.</li>
+                                    <li class="list-group-item">Menghadirkan solusi nyata bagi tantangan sosial masyarakat melalui aksi yang terstruktur dan berkelanjutan.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -499,10 +566,11 @@
                             <div class="card-body d-flex flex-column">
                                 <h3 class="card-title text-center">Misi</h3>
                                 <ul class="list-group list-group-flush flex-grow-1">
-                                    <li class="list-group-item">Mengembangkan produk teknologi berkualitas tinggi yang ramah lingkungan dan inovatif.</li>
-                                    <li class="list-group-item">Memberikan layanan pelanggan terbaik yang berfokus pada kepuasan dan kebutuhan pengguna.</li>
-                                    <li class="list-group-item">Membangun kerjasama yang kuat dengan berbagai pihak untuk menciptakan ekosistem bisnis yang berkelanjutan.</li>
-                                    <li class="list-group-item">Menumbuhkan budaya kerja yang inklusif, dinamis, dan mendukung perkembangan setiap individu.</li>
+                                    <li class="list-group-item">Memberdayakan masyarakat melalui pendidikan, pelatihan, dan pendampingan berkelanjutan.</li>
+                                    <li class="list-group-item">Meningkatkan akses masyarakat terhadap layanan sosial, ekonomi, dan hak dasar.</li>
+                                    <li class="list-group-item">Mendorong partisipasi aktif masyarakat dalam pembangunan lokal dan pengambilan keputusan.</li>
+                                    <li class="list-group-item">Mengembangkan kemitraan strategis dengan pemerintah, swasta, dan komunitas lokal.</li>
+                                    <li class="list-group-item">Membangun kesadaran akan nilai kemanusiaan, kesetaraan, dan keadilan sosial.</li>
                                 </ul>
                             </div>
                         </div>
@@ -529,38 +597,60 @@
                     <div class="col-lg-8"> <!-- Max lebar di 8 kolom, agar tidak terlalu lebar -->
                         <div class="row gy-4 text-center"> <!-- Center text -->
 
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="200">
-                                    <i class="bi bi-geo-alt"></i>
-                                    <h3>Alamat</h3>
-                                    <p>Desa Wairasa- Retetlement, Kec. Umbu Ratu Nggay Barat, Kab. Sumba Tengah, Provinsi Nusa Tenggara Timur</p>
+                            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                                <div class="row justify-content-center gy-4">
+                                    <div class="col-lg-8">
+                                        <div class="row gy-4 text-center">
+
+                                            <!-- Alamat -->
+                                            <div class="col-md-6">
+                                                <a href="https://maps.app.goo.gl/DBFkLdmyaR8Rfs8H6?g_st=aw" target="_blank" class="text-decoration-none text-dark">
+                                                    <div class="info-item h-100" data-aos="fade" data-aos-delay="200">
+                                                        <i class="bi bi-geo-alt"></i>
+                                                        <h3>Alamat</h3>
+                                                        <p>Desa Wairasa- Retetlement, Kec. Umbu Ratu Nggay Barat, Kab. Sumba Tengah, Provinsi Nusa Tenggara Timur</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <!-- Telepon -->
+                                            <div class="col-md-6">
+                                                <a href="https://wa.me/6282146527966" target="_blank" class="text-decoration-none text-dark">
+                                                    <div class="info-item h-100" data-aos="fade" data-aos-delay="300">
+                                                        <i class="bi bi-telephone"></i>
+                                                        <h3>Hubungi Kami</h3>
+                                                        <p>082146527966</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <!-- Email -->
+                                            <div class="col-md-6">
+                                                <a href="https://mail.google.com/mail/?view=cm&to=satuvisisumba@gmail.com" target="_blank" class="text-decoration-none text-dark">
+                                                    <div class="info-item h-100" data-aos="fade" data-aos-delay="400">
+                                                        <i class="bi bi-envelope"></i>
+                                                        <h3>Email</h3>
+                                                        <p>satuvisisumba@gmail.com</p>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <!-- Hari dan Jam Kerja (tidak diklik) -->
+                                            <div class="col-md-6">
+                                                <div class="info-item h-100" data-aos="fade" data-aos-delay="500">
+                                                    <i class="bi bi-clock"></i>
+                                                    <h3>Hari dan Jam Kerja</h3>
+                                                    <p>Senin - Sabtu</p>
+                                                    <p>08.00 - 17.00 WIT</p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="300">
-                                    <i class="bi bi-telephone"></i>
-                                    <h3>Hubungi Kami</h3>
-                                    <p>082146527966</p>
-                                </div>
-                            </div>
 
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="400">
-                                    <i class="bi bi-envelope"></i>
-                                    <h3>Email</h3>
-                                    <p>satuvisisumba@gmail.com</p>
-                                </div>
-                            </div>
-
-                            <div class="col-md-6">
-                                <div class="info-item" data-aos="fade" data-aos-delay="500">
-                                    <i class="bi bi-clock"></i>
-                                    <h3>Hari dan Jam Kerja</h3>
-                                    <p>Senin - Sabtu</p>
-                                    <p>08.00 - 17.00 WIT</p>
-                                </div>
-                            </div>
 
                         </div>
                     </div><!-- End .col-lg-8 -->

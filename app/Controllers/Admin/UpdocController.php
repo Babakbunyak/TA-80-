@@ -59,4 +59,18 @@ class UpdocController extends BaseController
 
         return redirect()->back()->with('error', 'Dokumen tidak valid!');
     }
+
+    public function edit($id_dokumentasi = null)
+    {
+        $dokumentasiModel = new DokumentasiModel();
+        $berita = null;
+        if ($id_dokumentasi) {
+            $berita = $dokumentasiModel->find($id_dokumentasi);
+        }
+        $data = [
+            'title' => $id_dokumentasi ? 'Edit Berita' : 'Tambah Berita',
+            'berita' => $berita
+        ];
+        return view('admin/dashboard/dokumentasi-upload/form-dokumentasi', $data);
+    }
 }

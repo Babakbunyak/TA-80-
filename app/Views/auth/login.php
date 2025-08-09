@@ -18,6 +18,8 @@
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <link href="<?= base_url('asset 2'); ?>/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets/css/register-custom.css'); ?>" rel="stylesheet">
 
@@ -53,10 +55,12 @@
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
-
+            <a href="/" class="home-btn">
+                <i class="fas fa-home"></i>
+            </a>
             <div class="col-xl-10 col-lg-12 col-md-9">
-
                 <div class="card o-hidden border-0 shadow-lg my-5 mx-auto col-lg-7">
+
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">

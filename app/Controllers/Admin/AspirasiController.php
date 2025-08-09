@@ -17,7 +17,9 @@ class AspirasiController extends BaseController
         ];
         $model = new LaporanModel();
         $data['laporan'] = $model->where('jenis', 'aspirasi')->findAll();
-        return view('admin\dashboard\pengguna\aspirasi\detail-aspirasi', $data);
+        //dd($data['laporan']);
+
+        return view('admin\dashboard\pengguna\aspirasi\list-aspirasi', $data);
     }
 
     public function detail($id_laporan)

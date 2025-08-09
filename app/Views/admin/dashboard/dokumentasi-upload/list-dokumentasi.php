@@ -36,7 +36,7 @@
                     </td>
                     <td><?= esc($row['judul'] ?? '-'); ?></td>
                     <td>
-                      <a href="<?= base_url('/upload-doc/uploaddoc/' . $row['id_dokumentasi']); ?>" class="btn btn-sm btn-info">Edit</a>
+                      <a href="<?= base_url('admin/edit/dokumentasi/' . $row['id_dokumentasi']); ?>" class="btn btn-sm btn-info">Edit</a>
                     </td>
                   </tr>
                 <?php endforeach; ?>

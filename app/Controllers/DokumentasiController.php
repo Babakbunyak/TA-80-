@@ -21,4 +21,11 @@ class DokumentasiController extends BaseController
         $data['dokumentasi'] = $model->find($id);
         return view('dokumentasi/detail-dokumentasi', $data);
     }
+
+    public function listDokumentasi()
+    {
+        $model = new DokumentasiModel();
+        $data['dokumentasi'] = $model->findAll();
+        return view('dokumentasi/dokumentasi_list', $data);
+    }
 }
