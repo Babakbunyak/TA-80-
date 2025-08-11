@@ -37,10 +37,10 @@ $routes->post('anggota/update/(:num)', 'Admin\AnggotaController::update/$1');
 $routes->get('anggota/hapus/(:num)', 'Admin\AnggotaController::hapus/$1');
 
 //Upload Berita
-$routes->post('/admin/upload', 'Admin\UpberitaController::upload');
+$routes->post('/admin/upload/berita', 'Admin\UpberitaController::upload');
 $routes->get('/admin/berita/tambah', 'Admin\UpberitaController::edit');
-$routes->get('/admin/edit/berita/(:num)', 'Admin\UpberitaController::edit/$1');
 $routes->get('admin/edit/berita/(:num)', 'Admin\UpberitaController::edit/$1');
+$routes->get('admin/berita/hapus/(:num)', 'Admin\UpberitaController::hapus/$1');
 $routes->get('/admin/berita', 'Admin\UpberitaController::listberita');
 $routes->post('upload_berita/upload', 'Admin\UpberitaController::upload');
 $routes->get('admin/berita/detail/(:num)', 'Admin\UpberitaController::detail/$1');
@@ -51,6 +51,7 @@ $routes->get('listdoc', 'Admin\UpdocController::listdoc');
 $routes->post('admin/upload_dokumentasi/upload', 'Admin\UpdocController::upload');
 $routes->get('admin/upload_dokumentasi', 'Admin\UpdocController::listdoc');
 $routes->get('admin/edit/dokumentasi/(:num)', 'Admin\UpdocController::edit/$1');
+$routes->get('admin/dokumentasi/hapus/(:num)', 'Admin\UpdocController::hapus/$1');
 
 // route beranda
 //$routes->get('beranda', 'BerandaController::index');
@@ -76,8 +77,8 @@ $routes->get('berita', 'BeritaController::index');
 
 // route tampilan dokumentasi
 $routes->get('user/list-dokumentasi', 'DokumentasiController::listDokumentasi');
-$routes->get('Berita2', 'Berita2Controller::berita2');
-$routes->get('Berita2/berita2(:num)', 'Berita2Controller::detail/$1');
+$routes->get('user/dokumentasi/(:num)', 'DokumentasiController::detail/$1');
+$routes->get('DokumentasiController/detail(:num)', 'Berita2Controller::detail/$1');
 
 
 // Route detail aspirasi

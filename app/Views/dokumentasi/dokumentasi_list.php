@@ -43,6 +43,11 @@
                     <li><a href="/#portfolio">Sejarah</a></li>
                     <li><a href="/#team">Pengurus</a></li>
                     <li><a href="/#contact">Kontak</a></li>
+                    <?php if (session()->get('logged_in')): ?>
+                        <li><a href="<?= base_url('profil-pengguna'); ?>">Profil</a></li>
+                    <?php else: ?>
+                        <li><a href="<?= base_url('auth'); ?>">Login</a></li>
+                    <?php endif; ?>
                 </ul>
                 <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
             </nav>
@@ -63,7 +68,7 @@
                 <div class="row gy-4">
                     <?php foreach ($dokumentasi as $d) : ?>
                         <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
-                            <div class="card h-100 d-flex flex-column align-items-center justify-content-between">
+                            <div class="card h-100 d-flex  justify-content-between">
                                 <?php
                                 $fotoPath = FCPATH . 'uploads/dokumentasi/' . $d['image'];
                                 $fotoURL = base_url('uploads/dokumentasi/' . $d['image']);
@@ -75,7 +80,7 @@
                                 <?php endif; ?>
                                 <div class="card-body w-100 p-2">
                                     <h3 class="mt-2 mb-2"><?= esc($d['judul']) ?></h3>
-                                    <a href="<?= base_url('dokumentasi/detail/' . $d['id_dokumentasi']) ?>" class="btn btn-custom btn-sm mt-2">Lihat Detail</a>
+                                    <a href="<?= base_url('user/dokumentasi/' . $d['id_dokumentasi']) ?>" class="btn btn-custom btn-sm mt-2">Lihat Detail</a>
                                 </div>
                             </div>
                         </div>

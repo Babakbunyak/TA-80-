@@ -106,4 +106,12 @@ class UpberitaController extends BaseController
         ];
         return view('berita/berita1', $data);
     }
+
+    public function hapus($id)
+    {
+        $model = new BeritaModel();
+        $model->delete($id);
+        session()->setFlashdata('success', 'Data anggota berhasil dihapus.');
+        return redirect()->to(base_url('admin/berita'));
+    }
 }

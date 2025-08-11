@@ -16,7 +16,7 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h1 class="mt-4">Upload Dokumentasi</h1>
+            <h1 class="mt-4"><?= isset($dokumentasi) ? 'Edit Dokumentasi' : 'Tambah Dokumentasi'; ?></h1>
 
             <?php if (session()->getFlashdata('sukses')): ?>
                 <div class="alert alert-success"><?= session()->getFlashdata('sukses') ?></div>
@@ -30,7 +30,7 @@
                         <?= csrf_field(); ?>
                         <div class="mb-3">
                             <label for="judul" class="form-label">Judul</label>
-                            <input class="form-control" type="text" name="judul" id="judul" placeholder="Masukkan Judul Dokumentasi" required>
+                            <input class="form-control" type="text" name="judul" value="<?= isset($dokumentasi) ? esc($dokumentasi['judul']) : ''; ?>" id="judul" placeholder="Masukkan Judul Dokumentasi" required>
                         </div>
                         <div class="mb-3">
                             <label for="dokumentasi" class="form-label">Isi Dokumentasi</label>
@@ -43,7 +43,10 @@
                                 <img id="preview-img" class="img-fixed" style="display:none;" alt="Preview Foto Dokumentasi">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-success">Upload</button>
+                        <button type="submit" class="btn btn-primary"><?= isset($dokumentasi) ? 'Update' : 'Simpan'; ?></button>
+                        <?php if (isset($dokumentasi)) : ?>
+                            <a href="<?= base_url('admin/dokumentasi/hapus/' . $dokumentasi['id_dokumentasi']); ?>" class="btn btn-danger ms-2" onclick="return confirm('Yakin ingin menghapus berita ini?')">Hapus</a>
+                        <?php endif;  ?>
                     </form>
                 </div>
             </div>

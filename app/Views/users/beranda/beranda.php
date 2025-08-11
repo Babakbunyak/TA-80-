@@ -147,7 +147,7 @@
                         <?php if (session()->get('logged_in')): ?>
                             <a href="<?= base_url('laporan/laporan'); ?>" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
                         <?php else: ?>
-                            <a href="<?= base_url('register'); ?>" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
+                            <a href="<?= base_url('auth'); ?>" class="btn btn-custom btn-sm" style="background-color: #21d1f8; color: white;">Buat Laporan</a>
                         <?php endif; ?>
                     </div>
                 </div>

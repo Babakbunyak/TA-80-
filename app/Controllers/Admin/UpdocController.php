@@ -63,14 +63,21 @@ class UpdocController extends BaseController
     public function edit($id_dokumentasi = null)
     {
         $dokumentasiModel = new DokumentasiModel();
-        $berita = null;
+        $dokumentasi = null;
         if ($id_dokumentasi) {
-            $berita = $dokumentasiModel->find($id_dokumentasi);
+            $dokumentasi = $dokumentasiModel->find($id_dokumentasi);
         }
         $data = [
-            'title' => $id_dokumentasi ? 'Edit Berita' : 'Tambah Berita',
-            'berita' => $berita
+            'title' => $id_dokumentasi ? 'Edit dokumentasi' : 'Tambah Berita',
+            'dokumentasi' => $dokumentasi
         ];
         return view('admin/dashboard/dokumentasi-upload/form-dokumentasi', $data);
+    }
+    public function hapus($id)
+    {
+        $model = new DokumentasiModel();
+        $model->delete($id);
+        session()->setFlashdata('success', 'Data anggota berhasil dihapus.');
+        return redirect()->to(base_url('admin/upload_dokumentasi'));
     }
 }
